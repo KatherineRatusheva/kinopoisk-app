@@ -31,6 +31,7 @@ const Films = () => {
         <>
         {films.map((item =>
             <div key={item.id} className='films-card'>
+                <div className='film-rating'> {item.rating} </div>
                 <Link to={`/film/${item.id}`}>
                     <img className='film-img' src={item.img} />
                 </Link>

@@ -19,6 +19,7 @@ const FilmCategory = () => {
             <div className='category-body'>
             {films.filter(item => item.category.includes(`${selectCategory}`)).map(item => (
                 <div key={item.id} className='films-card'>
+                    <div className='film-rating'> {item.rating} </div>
                     <Link to={`/film/${item.id}`}>
                         <img className='film-img' src={item.img} />
                     </Link>
