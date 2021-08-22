@@ -42,13 +42,3 @@ const Films = () => {
 }
 
 export default Films;
-
-{/* <>
-        {films.filter(item => item.type === "Популярные").map(item => (
-            <div key={item.id} className='films-cart'>
-            <img className='film-img' src={item.img} />
-            <div className='film-name'> {item.name} </div>
-        </div>
-        )
-            )}
-        </> */}

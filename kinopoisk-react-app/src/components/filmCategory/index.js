@@ -1,13 +1,17 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
+import axios from 'axios'
+import { ACTION_TYPES } from '../../constants';
+import { useParams } from 'react-router-dom';
 import './index.css'
 
 const FilmCategory = () => {
 
+    const dispatch = useDispatch()
+
     const selectCategory = useSelector((state) => { return state.selectCategory })
     const films = useSelector((state) => { return state.films })
-
 
     return (
         <div className='app-category'>

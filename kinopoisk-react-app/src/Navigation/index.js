@@ -9,6 +9,7 @@ import Main from "../pages/Main";
 import FilmCard from "../components/filmCard";
 import FilmCategory from "../components/filmCategory";
 import SignIn from "../components/signIn";
+import NavCategory from "../components/navCategory";
 
 export default function App() {
   return (
@@ -18,7 +19,19 @@ export default function App() {
 
         <Switch>
 
-        <Route path="/sign-in">
+          <Route path="/top">
+            <NavCategory />
+          </Route>
+
+          <Route path="/popular">
+            <NavCategory />
+          </Route>
+
+          <Route path="/new">
+            <NavCategory />
+          </Route>
+
+          <Route path="/sign-in">
             <SignIn/>
           </Route>
 

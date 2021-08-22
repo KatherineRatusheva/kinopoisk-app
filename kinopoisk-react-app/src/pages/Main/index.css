@@ -3,35 +3,6 @@
     background-color: #191c28;
 }
 
-.tags-menu {
-    display: flex;
-    justify-content: center;
-    margin: 30px;
-}
-
-.tag-name {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-    padding: 0 10px;
-    width: 80px;
-    height: 51px;
-    font-size: 14px;
-    background-color: #242835;
-    color: #bbc2ce;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-a {
-    text-decoration: none;
-}
-
-.tag-name:hover {
-    background-color: #46506c;
-}
-
 .films-container {
     display: flex;
     justify-content: center;
