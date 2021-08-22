@@ -1,0 +1,55 @@
+.film-card {
+    padding: 60px;
+    width: calc(100% - 360px);
+    background-color: #191c28;
+}
+
+.film-body {
+    display: flex;
+}
+
+.film-picture {
+    padding-right: 60px;
+    width: 250px;
+    height: 350px;
+}
+
+.film-title {
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #bbc2ce;
+}
+
+.film-description {
+    padding-top: 30px;
+    font-size: 15px;
+    color: #bbc2ce;
+}
+
+.col {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.col-name {
+    width: 25%;
+    color: #bbc2ce;
+}
+
+.col-description {
+    width: 60%;
+    color: #bbc2ce;
+}
+
+.film-save {
+    position: relative;
+    left: 50px;
+    margin-top: 15px;
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #d43053;
+    color: white;
+    cursor: pointer;
+    border: none;
+}

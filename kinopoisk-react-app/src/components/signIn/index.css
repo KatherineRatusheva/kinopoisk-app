@@ -1,0 +1,39 @@
+.app-signin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 240px);
+    background-color: #191c28;
+}
+
+.user-login, .user-password, .user-name {
+    width: 200px;
+    height: 30px;
+}
+
+.login-container, .password-container, .name-container {
+    display: flex;
+    padding-bottom: 30px;
+}
+
+.login-title, .password-title, .name-title {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    color: #bbc2ce;
+}
+
+.signin-button {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 12px;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #d43053;
+    color: white;
+    cursor: pointer;
+    border: none;
+}

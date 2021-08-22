@@ -1,0 +1,22 @@
+.films-card{
+    width: 170px;
+    height: 240px;
+    margin: 0 10px;
+    margin-bottom: 90px;
+}
+
+.film-img {
+    width: 170px;
+    height: 240px;
+    border-radius: 4px;
+}
+
+.film-img:hover{
+    border: #383b59 2px solid;
+    opacity: 0.7; 
+}
+
+.film-name {
+    font-size: 15px;
+    color: #bbc2ce;
+}

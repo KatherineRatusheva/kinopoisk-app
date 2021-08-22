@@ -1,0 +1,81 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 200px;
+    background-color: #171a27;
+}
+
+.navbar-new {
+    margin: 20px 0;
+    padding-left: 30px;
+    background: url(../../img/clapperboard.svg) no-repeat;
+    text-decoration: none;
+    color: #bbc2ce;
+    list-style-type: none;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.navbar-save {
+    margin: 20px 0;
+    padding-left: 30px;
+    text-decoration: none;
+    color: #bbc2ce;
+    list-style-type: none;
+    cursor: pointer;
+    transition: all 1s;
+    background: url(../../img/like.svg) no-repeat;
+}
+
+.navbar-popular {
+    margin: 20px 0;
+    padding-left: 30px;
+    text-decoration: none;
+    color: #bbc2ce;
+    list-style-type: none;
+    cursor: pointer;
+    transition: all 1s;
+    background: url(../../img/fire.svg) no-repeat;
+}
+
+.navbar-top {
+    margin: 20px 0;
+    padding-left: 30px;
+    text-decoration: none;
+    color: #bbc2ce;
+    list-style-type: none;
+    cursor: pointer;
+    transition: all 1s;
+    background: url(../../img/star.svg) no-repeat;
+}
+
+.navbar-main {
+    margin: 20px 0;
+    padding-left: 30px;
+    text-decoration: none;
+    color: #bbc2ce;
+    list-style-type: none;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.navbar-top:hover, .navbar-popular:hover, .navbar-save:hover, .navbar-new:hover, .navbar-main:hover {
+    color: #f2f4f7;
+    margin-left: 30px;
+    transform: scale(1);
+}
+
+.sign-in {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    padding-top: 6px;
+    width: 100px;
+    height: 32px;
+    border-radius: 10px;
+    background-color: #d43053;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
