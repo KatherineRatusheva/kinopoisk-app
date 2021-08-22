@@ -4,6 +4,7 @@
       "id": "rajja-i-poslednij-drakon",
       "name": "Райя и последний дракон",
       "year": 2021,
+      "rating": 8.2,
       "category": [
         "Мультфильм",
         "Фэнтези",
@@ -33,6 +34,7 @@
       "id": "otrjad-samoubijc-2-missija-navylet",
       "name": "Отряд самоубийц 2: Миссия навылет",
       "year": 2021,
+      "rating": 6.9,
       "category": [
         "Боевик",
         "Комедия",
@@ -62,6 +64,7 @@
       "id": "tihoe-mesto-2",
       "name": "Тихое место 2",
       "year": 2021,
+      "rating": 6.7,
       "category": [
         "Ужасы",
         "Триллер"
@@ -89,6 +92,7 @@
       "id": "gnev-chelovecheskij",
       "name": "Гнев человеческий",
       "year": 2021,
+      "rating": 7.6,
       "category": [
         "Боевик",
         "Триллер"
@@ -118,6 +122,7 @@
       "id": "vremja",
       "name": "Время",
       "year": 2021,
+      "rating": 6.3,
       "category": [
         "Боевик",
         "Триллер",
@@ -147,6 +152,7 @@
       "id": "krolik-piter-2",
       "name": "Кролик Питер 2",
       "year": 2021,
+      "rating": 6.4,
       "category": [
         "Комедия",
         "Приключение",
@@ -178,6 +184,7 @@
       "id": "godzilla-protiv-konga",
       "name": "Годзилла против Конга",
       "year": 2021,
+      "rating": 6.2,
       "category": [
         "Фантастика",
         "Боевик",
@@ -207,6 +214,7 @@
       "id": "krasotka-na-vzvode",
       "name": "Красотка на взводе",
       "year": 2021,
+      "rating": 5.6,
       "category": [
         "Боевик",
         "Комедия"
@@ -235,6 +243,7 @@
       "id": "ne-vremja-umirat",
       "name": "Не время умирать",
       "year": 2021,
+      "rating": 7.4,
       "category": [
         "Боевик",
         "Триллер",
@@ -265,6 +274,7 @@
       "id": "otcovstvo",
       "name": "Отцовство",
       "year": 2021,
+      "rating": 6.7,
       "category": [
         "Драма",
         "Комедия"
@@ -293,6 +303,7 @@
       "id": "svinja",
       "name": "Свинья",
       "year": 2021,
+      "rating": 6.3,
       "category": [
         "Драма",
         "Триллер"
@@ -321,6 +332,7 @@
       "id": "luka",
       "name": "Лука",
       "year": 2021,
+      "rating": 7.6,
       "category": [
         "Мультфильм",
         "Фэнтези",
@@ -348,6 +360,7 @@
       "id": "put-domoj",
       "name": "Путь домой",
       "year": 2019,
+      "rating": 7.3,
       "category": [
         "Мелодрама",
         "Семейный"
@@ -377,6 +390,7 @@
       "id": "verju-v-ljubov",
       "name": "Верю в любовь",
       "year": 2020,
+      "rating": 6.5,
       "category": [
         "Драма",
         "Мелодрама",
@@ -406,6 +420,7 @@
       "id": "esche-po-odnoj",
       "name": "Еще по одной",
       "year": 2020,
+      "rating": 7.5,
       "category": [
         "Драма",
         "Комедия"
@@ -435,6 +450,7 @@
       "id": "dzhoker",
       "name": "Джокер 2019",
       "year": 2019,
+      "rating": 8.1,
       "category": [
         "Триллер",
         "Драма",
@@ -465,6 +481,7 @@
       "id": "krujella",
       "name": "Круэлла 2021",
       "year": 2021,
+      "rating": 7.3,
       "category": [
         "Комедия",
         "Криминал"
@@ -493,6 +510,7 @@
       "id": "mortal-kombat",
       "name": "Мортал Комбат 2021",
       "year": 2021,
+      "rating": 6.2,
       "category": [
         "Боевик",
         "Фэнтези",
@@ -519,6 +537,8 @@
       "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/f56710bd-85c3-49b8-9260-2fa8a3d07c01/600x900"
     }
   ],
+
+
   "users": [
     {
       "id": 0,
