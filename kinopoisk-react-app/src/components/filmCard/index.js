@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ACTION_TYPES } from "../../constants";
 import { useParams } from 'react-router-dom';
 import './index.css'
+import Swal from 'sweetalert2'
 
 const FilmCard = () => {
     const dispatch = useDispatch()
@@ -27,6 +28,14 @@ const FilmCard = () => {
     useEffect(() => {
         getMoviesCard(id)
     }, [getMoviesCard])
+
+    const onSignin = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Вы должны зарегистрироваться!',
+        })
+    }
 
     
     return (
@@ -60,7 +69,7 @@ const FilmCard = () => {
                     </div>
                 </div>
             </div>
-            <button className='film-save'>Буду смотреть</button>
+            <button className='film-save' onClick={onSignin}>Буду смотреть</button>
             <div className='film-description'> {cardFilm.description} </div>
         </div>
     )
