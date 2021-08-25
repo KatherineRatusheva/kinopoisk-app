@@ -1,14 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux';
 import { ACTION_TYPES } from "../../constants";
-import { useParams } from 'react-router-dom';
-import './index.css'
-import Swal from 'sweetalert2'
+import { Redirect, Router, useParams } from 'react-router-dom';
+import './index.css';
+import Swal from 'sweetalert2';
+
+import { Rating } from 'react-simple-star-rating';
 
 const FilmCard = () => {
     const dispatch = useDispatch()
     const cardFilm = useSelector((state) => { return state.cardFilm })
+    const rating = useSelector((state) => { return state.rating })
 
     const {id} = useParams()
 
@@ -29,14 +32,25 @@ const FilmCard = () => {
         getMoviesCard(id)
     }, [getMoviesCard])
 
+const [button, setButton] = useState(false) // переписать
+
     const onSignin = () => {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'Вы должны зарегистрироваться!',
-        })
+        }).then((result) => {
+            if (result.isConfirmed) {
+                setButton(true)
+            }})
     }
 
+  const handleRating = (rate) => {
+    dispatch ({
+        type: ACTION_TYPES.CHANGE_RATING,
+        payload: rate
+    })
+  }
     
     return (
         <div className='film-card'>
@@ -67,9 +81,17 @@ const FilmCard = () => {
                         <div className='col-name'> В главных ролях: </div>
                         <div className='col-description'> {cardFilm.actors?.map((item) => `${item}, ` )} </div>
                     </div>
+
+                    <div className='col'>
+                        <div className='col-name'> Рейтинг: {cardFilm.rating} </div>
+                        <div className='col-description'>
+                        <Rating onClick={handleRating} ratingValue={rating} stars={10} /> </div>
+                    </div>
+                    
                 </div>
             </div>
             <button className='film-save' onClick={onSignin}>Буду смотреть</button>
+            {button === true && <Redirect to="/sign-in"/>}
             <div className='film-description'> {cardFilm.description} </div>
         </div>
     )

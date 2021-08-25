@@ -9,7 +9,11 @@ const initialState = {
     login: '',
     password: '',
     name: '',
-    user: {}
+    user: {},
+    rating: false,
+
+    inputSearch: '',
+    searchFilms: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -67,6 +71,27 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             user: action.payload,
+        }
+    }
+
+    if(action.type === ACTION_TYPES.CHANGE_RATING) {
+        return {
+            ...state,
+            rating: action.payload,
+        }
+    }
+
+    if(action.type === ACTION_TYPES.SEARCH_INPUT) {
+        return {
+            ...state,
+            inputSearch: action.payload,
+        }
+    }
+
+    if(action.type === ACTION_TYPES.GET_SEARCH_FILMS) {
+        return {
+            ...state,
+            searchFilms: action.payload,
         }
     }
 
