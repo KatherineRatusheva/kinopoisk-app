@@ -92,6 +92,7 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             searchFilms: action.payload,
+            inputSearch: '',
         }
     }
 

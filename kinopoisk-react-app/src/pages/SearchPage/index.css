@@ -1,0 +1,11 @@
+.search-text {
+    padding: 50px 70px;
+    font-size: 16px;
+    color: #bbc2ce;
+}
+
+.search-container {
+    padding: 0 60px;
+    width: calc(100% - 360px);
+    background-color: #191c28;
+}

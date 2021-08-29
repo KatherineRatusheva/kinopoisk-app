@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux';
 import { ACTION_TYPES } from "../../constants";
-import { Redirect, Router, useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import './index.css';
 import Swal from 'sweetalert2';
 

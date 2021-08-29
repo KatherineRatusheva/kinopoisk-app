@@ -10,6 +10,7 @@ import FilmCard from "../components/filmCard";
 import FilmCategory from "../components/filmCategory";
 import SignIn from "../components/signIn";
 import NavCategory from "../components/navCategory";
+import SearchPage from "../pages/SearchPage";
 
 export default function App() {
   return (
@@ -33,6 +34,10 @@ export default function App() {
 
           <Route path="/sign-in">
             <SignIn/>
+          </Route>
+
+          <Route path="/search=:search">
+            <SearchPage/>
           </Route>
 
           <Route path="/film/:id">
