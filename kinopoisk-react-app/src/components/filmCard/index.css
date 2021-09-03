@@ -1,6 +1,7 @@
 .film-card {
-    padding: 60px;
-    width: calc(100% - 360px);
+    margin: 0 auto;
+    padding-top: 60px;
+    width: 70%;
     background-color: #191c28;
 }
 
@@ -21,14 +22,14 @@
 }
 
 .film-description {
-    padding-top: 30px;
+    padding: 50px 0;
     font-size: 15px;
     color: #bbc2ce;
 }
 
 .col {
     display: flex;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .col-name {
@@ -44,7 +45,7 @@
 .film-save {
     position: relative;
     left: 50px;
-    margin-top: 15px;
+    margin-top: 20px;
     width: 140px;
     height: 40px;
     border-radius: 10px;

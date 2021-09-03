@@ -13,7 +13,7 @@ const SearchPage = () => {
         <div className='app'>
             <Search />
             <div className='search-text'> Найдено по запросу "{inputSearch}": {searchFilms.length}</div>
-            <div className='search-container'>
+            <div className='films-container'>
                 <>
                 {searchFilms.map((item =>
                 <div key={item.id} className='films-card'>

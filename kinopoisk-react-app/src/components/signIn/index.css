@@ -1,9 +1,8 @@
 .app-signin {
+    margin-top: 130px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: calc(100% - 240px);
     background-color: #191c28;
 }
 
@@ -36,4 +35,10 @@
     color: white;
     cursor: pointer;
     border: none;
+}
+
+.signin-title {
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: white;
 }

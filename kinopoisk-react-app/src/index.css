@@ -14,16 +14,7 @@ code {
 
 #root {
   margin: 0 auto;
-}
-
-.container {
-  display: flex;
-}
-
-.afisha {
-  width: 100%;
-  height: 500px;
-  background: url(../src/img/13315908.jpg) no-repeat;
-  background-size: cover;
-  background-position: 100% 30%;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background: #191c28;
 }

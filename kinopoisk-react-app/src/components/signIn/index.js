@@ -58,7 +58,7 @@ const SignIn = () => {
 
     return (
         <div className='app-signin'>
-            
+            <h1 className='signin-title'>Войти в профиль</h1>
             <div className='name-container'>
                 <div className='name-title'>Введите имя:</div>
 

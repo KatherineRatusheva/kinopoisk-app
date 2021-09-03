@@ -1,8 +1,8 @@
 .films-card{
     position: relative;
-    width: 170px;
-    height: 240px;
-    margin: 0 10px;
+    width: 175px;
+    height: 250px;
+    margin: 0 16px;
     margin-bottom: 90px;
 }
 
@@ -13,8 +13,8 @@
 }
 
 .films-card:hover{
-    border: #383b59 2px solid;
-    opacity: 0.6; 
+    opacity: 0.6;
+    transform: scale(1.1);
 }
 
 .films-card:hover::after{
@@ -26,6 +26,7 @@
     height: 25px;
     width: 25px;
     background: url(../../img/play.svg);
+    cursor: pointer;
 }
 
 .film-name {

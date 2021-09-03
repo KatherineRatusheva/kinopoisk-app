@@ -1,0 +1,8 @@
+.dropdown-container {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 95%;
+    background-color: #1f232e;
+}

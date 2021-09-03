@@ -11,10 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
 
     <Provider store={createStore(reducer)}>
-    <div className='afisha'></div>
-    <div className='container'>
       <Navigation />
-    </div>
     </Provider>
     
   </React.StrictMode>,

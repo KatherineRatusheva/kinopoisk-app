@@ -1,27 +1,32 @@
 form {
   position: absolute;
-  top: 35%;
-  left: calc(50% - 250px);
-  width: 500px;
-  margin: 0 auto;
+  top: 3%;
+  left: 50%;
+  width: 300px;
+  color: #bbc2ce;
 }
 
 .input-search {
   width: 100%;
-  height: 42px;
+  height: 32px;
   padding-left: 15px;
   border: none;
   outline: none;
   border-radius: 25px;
+  background-color: #242835;
 }
 .button-search {
   height: 26px;
   width: 26px;
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 4px;
+  right: 6px;
   background: url(../../img/search.svg) no-repeat;
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+::placeholder {
+  color: #bbc2ce;
 }
