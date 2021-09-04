@@ -11,6 +11,7 @@ import FilmCategory from "../components/filmCategory";
 import SignIn from "../components/signIn";
 import NavCategory from "../components/navCategory";
 import SearchPage from "../pages/SearchPage";
+import FilterPage from "../pages/FilterPage";
 
 export default function App() {
   return (
@@ -34,6 +35,10 @@ export default function App() {
 
           <Route path="/sign-in">
             <SignIn/>
+          </Route>
+
+          <Route path="/movies/:filter">
+            <FilterPage />
           </Route>
 
           <Route path="/search=:search">

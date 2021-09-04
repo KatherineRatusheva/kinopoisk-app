@@ -14,6 +14,10 @@ const initialState = {
 
     inputSearch: '',
     searchFilms: [],
+
+    selectValueFilterCountry: '',
+    selectValueFilterYear: '',
+    selectValueFilterStar: '',
 }
 
 const reducer = (state = initialState, action) => {
@@ -93,6 +97,27 @@ const reducer = (state = initialState, action) => {
             ...state,
             searchFilms: action.payload,
             inputSearch: '',
+        }
+    }
+
+    if(action.type === ACTION_TYPES.SELECT_VALUE_FILTER_COUNTRY) {
+        return {
+            ...state,
+            selectValueFilterCountry: action.payload,
+        }
+    }
+
+    if(action.type === ACTION_TYPES.SELECT_VALUE_FILTER_YEAR) {
+        return {
+            ...state,
+            selectValueFilterYear: action.payload,
+        }
+    }
+
+    if(action.type === ACTION_TYPES.SELECT_VALUE_FILTER_STAR) {
+        return {
+            ...state,
+            selectValueFilterStar: action.payload,
         }
     }
 
