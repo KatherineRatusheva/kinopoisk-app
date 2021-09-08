@@ -1,20 +1,19 @@
 import React, { useEffect } from 'react';
-import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux';
 import { ACTION_TYPES } from "../../constants";
+import { getUserLogin } from "../../actions";
 import './index.css'
 
 const SignIn = () => {
 
     const dispatch = useDispatch()
-    const login = useSelector((state) => { return state.login })
+    const email = useSelector((state) => { return state.email })
     const password = useSelector((state) => { return state.password })
-    const name = useSelector((state) => { return state.name })
     const user = useSelector((state) => { return state.user })
 
-    const getUserLogin = (event) => {
+    const getUserEmail = (event) => {
         dispatch ({
-            type: ACTION_TYPES.INPUT_LOGIN,
+            type: ACTION_TYPES.INPUT_EMAIL,
             payload: event.target.value
         })
     }
@@ -26,57 +25,44 @@ const SignIn = () => {
         })
     }
 
-    const getUserName = (event) => {
+    const getUsers = async () => {
+        dispatch(getUserLogin(email, password))
+    }
+
+    // Выйти из кабинета
+    const logout = () => {
+        sessionStorage.clear()
         dispatch ({
-            type: ACTION_TYPES.INPUT_NAME,
-            payload: event.target.value
+            type: ACTION_TYPES.GET_USER,
+            payload: null
         })
     }
 
-    const getUsers = async () => {
-        try {
-            const responce = await axios.post(`http://localhost:3000/users`, 
-            { 
-                "login": login, 
-                "password": password,
-                "name": name,
-            })
-
-            dispatch ({
-                type: ACTION_TYPES.GET_USER,
-                payload: responce.data
-            })
-            // console.log(responce.data);
-
-        } catch (err) {
-            console.log('response error', err);
-        }
-    }
-
-
-    
 
     return (
-        <div className='app-signin'>
-            <h1 className='signin-title'>Войти в профиль</h1>
-            <div className='name-container'>
-                <div className='name-title'>Введите имя:</div>
+    
+    <div className='app-signin'>
+        
+        {user ? 
 
-                <input type='text' 
-                className='user-name' 
-                placeholder="Name" 
-                value={name} 
-                onChange={getUserName}></input>
-            </div>
+        <div>
+            <div className='signin-title'> Привет <b>{user.email}</b> 👋</div>
+            <button className='signin-button' onClick={logout}>Выйти</button>
+        </div>
+
+        :
+        
+        <div>
+            <h1 className='signin-title'>Войти в профиль</h1>
 
             <div className='login-container'>
-                <div className='login-title'>Введите логин:</div>
+                <div className='login-title'>Введите e-mail:</div>
 
                 <input type='text' 
                 className='user-login' 
-                placeholder="Login" 
-                value={login} 
-                onChange={getUserLogin}></input>
+                placeholder="E-mail" 
+                value={email} 
+                onChange={getUserEmail}></input>
             </div>
 
             <div className='password-container'>
@@ -90,8 +76,11 @@ const SignIn = () => {
             </div>
 
             <button className='signin-button' onClick={getUsers}>Войти в систему</button>
-            
-        </div>
+        </div>    
+        }
+
+    </div>
+        
     )
 }
 

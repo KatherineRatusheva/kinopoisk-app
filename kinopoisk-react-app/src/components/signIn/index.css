@@ -6,17 +6,18 @@
     background-color: #191c28;
 }
 
-.user-login, .user-password, .user-name {
+.user-login, .user-password {
     width: 200px;
     height: 30px;
+    padding-left: 7px;
 }
 
-.login-container, .password-container, .name-container {
+.login-container, .password-container {
     display: flex;
     padding-bottom: 30px;
 }
 
-.login-title, .password-title, .name-title {
+.login-title, .password-title {
     display: flex;
     align-items: center;
     width: 150px;

@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Navigation from './Navigation'
+import Navigation from './Navigation';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import reducer from './reducer';
+import thunk from 'redux-thunk';
 
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import reducer from './reducer'
+const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
 
-    <Provider store={createStore(reducer)}>
+    <Provider store={store}>
       <Navigation />
     </Provider>
     

@@ -9,6 +9,7 @@ const Search = () => {
 
     const dispatch = useDispatch()
     const inputSearch = useSelector((state) => { return state.inputSearch })
+    const searchFilms = useSelector((state) => { return state.searchFilms })
 
     const getValueSearch = (event) => {
         dispatch ({

@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { getAuthorizedUser } from '../../src/actions';
+
 import Navbar from "../components/navbar";
 import Main from "../pages/Main";
 import FilmCard from "../components/filmCard";
@@ -12,8 +15,16 @@ import SignIn from "../components/signIn";
 import NavCategory from "../components/navCategory";
 import SearchPage from "../pages/SearchPage";
 import FilterPage from "../pages/FilterPage";
+import SaveFilms from "../pages/Save";
 
 export default function App() {
+  
+  const dispatch = useDispatch()
+    
+  useEffect(() => {
+    dispatch(getAuthorizedUser())
+  }, [])
+
   return (
 
     <Router>  
@@ -31,6 +42,10 @@ export default function App() {
 
           <Route path="/new">
             <NavCategory />
+          </Route>
+
+          <Route path="/save">
+            <SaveFilms />
           </Route>
 
           <Route path="/sign-in">

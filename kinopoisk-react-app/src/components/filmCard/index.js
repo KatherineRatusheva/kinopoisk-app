@@ -12,6 +12,9 @@ const FilmCard = () => {
     const dispatch = useDispatch()
     const cardFilm = useSelector((state) => { return state.cardFilm })
     const rating = useSelector((state) => { return state.rating })
+    const accessToken = useSelector((state) => { return state.accessToken })
+    const saveFilmsUser = useSelector((state) => { return state.saveFilmsUser })
+    const user = useSelector((state) => { return state.user })
 
     const {id} = useParams()
 
@@ -32,9 +35,32 @@ const FilmCard = () => {
         getMoviesCard(id)
     }, [getMoviesCard])
 
-const [button, setButton] = useState(false) // переписать
 
-    const onSignin = () => {
+    // alert если пользователь не зарегистрирован
+    const [button, setButton] = useState(false)
+
+    const onSignin = async () => {
+        if(accessToken) {
+
+            try {
+                const responce = await axios.patch(`http://localhost:3000/users/${user.id}`, 
+                { 
+                    "SaveFilmName": [ ...saveFilmsUser, cardFilm]
+                })
+    
+                dispatch ({
+                    type: ACTION_TYPES.SAVE_FILM_USER,
+                    payload: responce.data.SaveFilmName
+                })
+                console.log(responce.data.SaveFilmName);
+    
+            } catch (err) {
+                console.log('response error', err);
+            }
+
+
+
+        } else
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -59,7 +85,9 @@ const [button, setButton] = useState(false) // переписать
                 <img src={cardFilm.img} className='film-picture'/>
                 
                 <div className='film-subbody'>
-                    <div className='film-title'> {cardFilm.name} </div>
+                    <div className='film-title'> {cardFilm.name} 
+                        <span className='film-age'> {cardFilm.age} </span>
+                    </div>
                     
                     <div className='col'>
                         <div className='col-name'> Год производства: </div>
@@ -92,6 +120,7 @@ const [button, setButton] = useState(false) // переписать
             </div>
             <button className='film-save' onClick={onSignin}>Буду смотреть</button>
             {button === true && <Redirect to="/sign-in"/>}
+
             <div className='film-description'> {cardFilm.description} </div>
         </div>
     )

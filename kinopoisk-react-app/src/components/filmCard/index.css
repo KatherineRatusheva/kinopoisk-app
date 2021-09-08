@@ -16,6 +16,7 @@
 }
 
 .film-title {
+    position: relative;
     margin-bottom: 30px;
     font-size: 30px;
     color: #bbc2ce;
@@ -53,4 +54,14 @@
     color: white;
     cursor: pointer;
     border: none;
+}
+
+.film-age {
+    font-size: 12px;
+    background: black;
+    border-radius: 5px;
+    padding: 4px 6px;
+    position: absolute;
+    top: 13px;
+    margin-left: 10px;
 }

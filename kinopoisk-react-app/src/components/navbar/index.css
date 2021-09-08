@@ -32,17 +32,29 @@
 }
 
 .sign-in {
-    display: flex;
-    margin-right: 16px;
-    justify-content: center;
-    padding-top: 6px;
-    width: 100px;
-    height: 32px;
-    border-radius: 10px;
-    background-color: #d43053;
-    color: white;
-    cursor: pointer;
-    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    border: 2px solid rgba(255,255,255,.32);
+    background: url(../../img/account-avatar.svg) no-repeat;
+    background-size: 60%;
+    background-position-x: center;
+    background-position-y: center;
+    margin-right: 20px;
+}
+
+.user-img {
+    width: 40px;
+    height: 40px;
+    background: url(https://avatars.dicebear.com/api/bottts/:seed.svg) no-repeat;
+    background-size: 100%;
+    background-position-x: center;
+    background-position-y: center;
+    margin-right: 20px;
+}
+
+.sign-in:hover {
+    border: 2px solid #bbc2ce;
 }
 
 .navbar-user {

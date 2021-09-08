@@ -11,14 +11,15 @@ const Navbar = () => {
     const dispatch = useDispatch()
 
     const selectNavigationType = useSelector((state) => { return state.selectNavigationType })
+    const user = useSelector((state) => { return state.user })
 
     const getTypeFilm = (item) => {
         dispatch ({
-            type: ACTION_TYPES.SELECT_NAVIGATION_TYPY_FILMS,
+            type: ACTION_TYPES.SELECT_NAVIGATION_TYPE_FILMS,
             payload: item
         })
     }
-    
+  
     return (
         <>
         <nav className='navbar'>
@@ -31,7 +32,7 @@ const Navbar = () => {
             </div>
             <div className='navbar-user'>
                 <Link to={'/save'} className='navbar-save'></Link>
-                <Link to={'/sign-in'} className='sign-in'>Login</Link>
+                <Link to={'/sign-in'} className={user ? 'user-img' : 'sign-in'}></Link>
             </div>
         </nav>
         

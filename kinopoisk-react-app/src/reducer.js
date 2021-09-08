@@ -6,10 +6,11 @@ const initialState = {
     selectCategory: '',
     selectNavigationType: '',
 
-    login: '',
+    email: '',
     password: '',
-    name: '',
-    user: {},
+    user: null,
+    accessToken: '',
+
     rating: false,
 
     inputSearch: '',
@@ -18,6 +19,8 @@ const initialState = {
     selectValueFilterCountry: '',
     selectValueFilterYear: '',
     selectValueFilterStar: '',
+
+    saveFilmsUser: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -26,6 +29,7 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             films: action.payload,
+            inputSearch: ''
         }
     }
 
@@ -33,6 +37,7 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             cardFilm: action.payload,
+            inputSearch: ''
         }
     }
 
@@ -43,17 +48,18 @@ const reducer = (state = initialState, action) => {
         }
     }
 
-    if(action.type === ACTION_TYPES.SELECT_NAVIGATION_TYPY_FILMS) {
+    if(action.type === ACTION_TYPES.SELECT_NAVIGATION_TYPE_FILMS) {
         return {
             ...state,
             selectNavigationType: action.payload,
         }
     }
 
-    if(action.type === ACTION_TYPES.INPUT_LOGIN) {
+// Авторизация
+    if(action.type === ACTION_TYPES.INPUT_EMAIL) {
         return {
             ...state,
-            login: action.payload,
+            email: action.payload,
         }
     }
 
@@ -64,13 +70,6 @@ const reducer = (state = initialState, action) => {
         }
     }
 
-    if(action.type === ACTION_TYPES.INPUT_NAME) {
-        return {
-            ...state,
-            name: action.payload,
-        }
-    }
-
     if(action.type === ACTION_TYPES.GET_USER) {
         return {
             ...state,
@@ -78,6 +77,14 @@ const reducer = (state = initialState, action) => {
         }
     }
 
+    if(action.type === ACTION_TYPES.GET_ACCESSTOKEN_USER) {
+        return {
+            ...state,
+            accessToken: action.payload,
+        }
+    }
+
+///////
     if(action.type === ACTION_TYPES.CHANGE_RATING) {
         return {
             ...state,
@@ -96,7 +103,6 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             searchFilms: action.payload,
-            inputSearch: '',
         }
     }
 
@@ -120,6 +126,15 @@ const reducer = (state = initialState, action) => {
             selectValueFilterStar: action.payload,
         }
     }
+
+    // Сохраненные фильмы
+    if(action.type === ACTION_TYPES.SAVE_FILM_USER) {
+        return {
+            ...state,
+            saveFilmsUser: action.payload
+        }
+    }
+
 
   return state
 }
