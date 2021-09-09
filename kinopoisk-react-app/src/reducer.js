@@ -131,7 +131,7 @@ const reducer = (state = initialState, action) => {
     if(action.type === ACTION_TYPES.SAVE_FILM_USER) {
         return {
             ...state,
-            saveFilmsUser: action.payload
+            saveFilmsUser: action.payload,
         }
     }
 

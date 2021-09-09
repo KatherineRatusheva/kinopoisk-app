@@ -36,29 +36,24 @@ const FilmCard = () => {
     }, [getMoviesCard])
 
 
-    // alert если пользователь не зарегистрирован
+    // сохранить фильм в избранное
     const [button, setButton] = useState(false)
 
-    const onSignin = async () => {
-        if(accessToken) {
+    const saveFilm = async () => {
+        if(user) {
 
             try {
-                const responce = await axios.patch(`http://localhost:3000/users/${user.id}`, 
-                { 
-                    "SaveFilmName": [ ...saveFilmsUser, cardFilm]
+                const responce = await axios.patch(`http://localhost:3000/users/${user.id}`,
+                {
+                    "SaveFilmName": [...saveFilmsUser, cardFilm]
                 })
-    
                 dispatch ({
                     type: ACTION_TYPES.SAVE_FILM_USER,
                     payload: responce.data.SaveFilmName
                 })
-                console.log(responce.data.SaveFilmName);
-    
             } catch (err) {
                 console.log('response error', err);
             }
-
-
 
         } else
         Swal.fire({
@@ -118,7 +113,14 @@ const FilmCard = () => {
                     
                 </div>
             </div>
-            <button className='film-save' onClick={onSignin}>Буду смотреть</button>
+
+            <button className='film-save' onClick={saveFilm}>Буду смотреть</button>
+
+            {/* {buttonSaveFilm === 'true' ? 
+            <button className='film-save-add'>Добавлен в избранное</button>
+            : <button className='film-save' onClick={saveFilm}>Буду смотреть</button>
+            } */}
+
             {button === true && <Redirect to="/sign-in"/>}
 
             <div className='film-description'> {cardFilm.description} </div>

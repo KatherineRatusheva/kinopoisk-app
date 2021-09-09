@@ -7,13 +7,12 @@ const SaveFilms = () => {
 
     const dispatch = useDispatch()
     const saveFilmsUser = useSelector((state) => { return state.saveFilmsUser })
-    const accessToken = useSelector((state) => { return state.accessToken })
+    const user = useSelector((state) => { return state.user })
 
-    
     return (
 
         <div className='save-container'>
-            {accessToken ?
+            {user ?
             <>
             <h1 className='category-title'>Моя подборка</h1>
             <div className='category-body'>

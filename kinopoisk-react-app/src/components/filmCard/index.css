@@ -56,6 +56,18 @@
     border: none;
 }
 
+.film-save-add {
+    position: relative;
+    left: 50px;
+    margin-top: 20px;
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #74a42b;
+    color: white;
+    border: none;
+}
+
 .film-age {
     font-size: 12px;
     background: black;

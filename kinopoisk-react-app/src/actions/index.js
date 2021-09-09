@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { ACTION_TYPES } from "../constants";
 
+// Авторизация пользователей
 export const getUserLogin = (email, password) => {
     return async (dispatch) => {
 
@@ -19,6 +20,10 @@ export const getUserLogin = (email, password) => {
                 type: ACTION_TYPES.GET_ACCESSTOKEN_USER,
                 payload: responce.data.accessToken
             })
+            dispatch ({
+                type: ACTION_TYPES.SAVE_FILM_USER,
+                payload: responce.data.user.SaveFilmName
+            })
             sessionStorage.setItem('accessTokenUser', responce.data.accessToken)
             sessionStorage.setItem('userId', responce.data.user.id)
     
@@ -28,6 +33,7 @@ export const getUserLogin = (email, password) => {
     }
 }
 
+// Получать пользователя при рендере приложения
 export const getAuthorizedUser = () => {
     return async (dispatch) => {
 
@@ -40,7 +46,10 @@ export const getAuthorizedUser = () => {
                     type: ACTION_TYPES.GET_USER,
                     payload: responce.data
                 })
-            console.log(responce.data);
+                dispatch ({
+                    type: ACTION_TYPES.SAVE_FILM_USER,
+                    payload: responce.data.SaveFilmName
+                })
             } catch (err) {
                 console.log('response error', err);
             }
