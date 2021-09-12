@@ -1,12 +1,5 @@
 {
-  "users": [
-    {
-      "email": "test@gmail.com",
-      "password": "$2a$10$Lf4T1WGK8V/4R..eFA8dTOA6ZOE3tk0maQ/WxXkJ4j9ZJIezTih.G",
-      "login": "test",
-      "id": 1
-    }
-  ],
+  "users": [],
   "films": [
     {
       "id": "rajja-i-poslednij-drakon",
@@ -99,7 +92,8 @@
         "Блейк ДеЛонг",
         "Шери Фэйрчайлд"
       ],
-      "img": "https://media.kg-portal.ru/movies/q/quietplace2/posters/quietplace2_3.jpg"
+      "img": "https://media.kg-portal.ru/movies/q/quietplace2/posters/quietplace2_3.jpg",
+      "video": "https://youtu.be/5Rjm8TVa1T0"
     },
     {
       "id": "gnev-chelovecheskij",
