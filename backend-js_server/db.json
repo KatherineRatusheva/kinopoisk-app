@@ -1,5 +1,12 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "k.ratusheva@gmail.com",
+      "password": "$2a$10$j8OeHv/LZFq7jC0vn5KcBerB3RZa5/HXdlCgs.Vh4.v3sF4snO6CW",
+      "login": "k.ratusheva",
+      "id": 1
+    }
+  ],
   "films": [
     {
       "id": "rajja-i-poslednij-drakon",
