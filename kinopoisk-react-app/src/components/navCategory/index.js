@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
-import axios from 'axios'
-import { ACTION_TYPES } from '../../constants';
+import { getMoviesNavbar } from '../../actions';
 
 const NavCategory = () => {
 
@@ -11,21 +10,8 @@ const NavCategory = () => {
     const films = useSelector((state) => { return state.films })
     const selectNavigationType = useSelector((state) => { return state.selectNavigationType })
 
-    const getMovies = async (selectCategoryMenu) => {
-        try {
-            const responce = await axios.get(`http://localhost:3000/films?type=${selectCategoryMenu}`)
-            dispatch ({
-                type: ACTION_TYPES.GET_FILMS,
-                payload: responce.data
-            })
-
-        } catch (err) {
-            console.log('response error', err);
-        }
-    }
-
     useEffect(() => {
-        getMovies(selectNavigationType)
+        dispatch(getMoviesNavbar(selectNavigationType))
     }, [selectNavigationType])
 
     return (

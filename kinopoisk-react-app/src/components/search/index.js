@@ -2,14 +2,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ACTION_TYPES } from "../../constants";
 import './index.css';
-import axios from 'axios'
 import { Link } from "react-router-dom";
+import { getMoviesSearch } from "../../actions";
 
 const Search = () => {
 
     const dispatch = useDispatch()
     const inputSearch = useSelector((state) => { return state.inputSearch })
-    const searchFilms = useSelector((state) => { return state.searchFilms })
 
     const getValueSearch = (event) => {
         dispatch ({
@@ -18,17 +17,8 @@ const Search = () => {
         })
     }
 
-    const getMoviesSearch = async (inputSearchValue) => {
-        try {
-            const responce = await axios.get(`http://localhost:3000/films?q=${inputSearchValue}`)
-            dispatch ({
-                type: ACTION_TYPES.GET_SEARCH_FILMS,
-                payload: responce.data
-            })
-
-        } catch (err) {
-            console.log('response error', err);
-        }
+    const getMovies = async (inputSearchValue) => {
+        dispatch(getMoviesSearch(inputSearchValue))
     }
 
     return (
@@ -40,7 +30,7 @@ const Search = () => {
                 onChange={getValueSearch}/>
 
                 <Link to={`/search=${inputSearch}`}>
-                    <button className='button-search' onClick={() => getMoviesSearch(inputSearch)}></button>
+                    <button className='button-search' onClick={() => getMovies(inputSearch)}></button>
                 </Link>
             </form>   
         </div>

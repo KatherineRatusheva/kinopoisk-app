@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { ACTION_TYPES } from "../constants";
 
-// Авторизация пользователей
-export const getUserLogin = (email, password) => {
+// Войти в систему
+export const signIn = (email, password) => {
     return async (dispatch) => {
 
         try {
@@ -23,6 +23,35 @@ export const getUserLogin = (email, password) => {
             dispatch ({
                 type: ACTION_TYPES.SAVE_FILM_USER,
                 payload: responce.data.user.SaveFilmName
+            })
+            sessionStorage.setItem('accessTokenUser', responce.data.accessToken)
+            sessionStorage.setItem('userId', responce.data.user.id)
+    
+        } catch (err) {
+            console.log('response error', err);
+        }
+    }
+}
+
+// Зарегистрироваться
+export const registerUser = (login, email, password) => {
+    return async (dispatch) => {
+
+        try {
+            const responce = await axios.post(`http://localhost:3000/register`, 
+            {
+                "login": login, 
+                "email": email, 
+                "password": password,
+            })
+    
+            dispatch ({
+                type: ACTION_TYPES.GET_USER,
+                payload: responce.data.user
+            })
+            dispatch ({
+                type: ACTION_TYPES.GET_ACCESSTOKEN_USER,
+                payload: responce.data.accessToken
             })
             sessionStorage.setItem('accessTokenUser', responce.data.accessToken)
             sessionStorage.setItem('userId', responce.data.user.id)
@@ -55,5 +84,53 @@ export const getAuthorizedUser = () => {
             }
         }
 
+    }
+}
+
+// Получить фильмы
+export const getMovies = () => {
+    return async (dispatch) => {
+        try {
+            const responce = await axios.get(`http://localhost:3000/films`)
+            dispatch ({
+                type: ACTION_TYPES.GET_FILMS,
+                payload: responce.data
+            })
+    
+        } catch (err) {
+            console.log('response error', err);
+        }
+    }
+}
+
+// Выводить фильмы (меню)
+export const getMoviesNavbar = (selectCategoryMenu) => {
+    return async (dispatch) => {
+        try {
+            const responce = await axios.get(`http://localhost:3000/films?type=${selectCategoryMenu}`)
+            dispatch ({
+                type: ACTION_TYPES.GET_FILMS,
+                payload: responce.data
+            })
+    
+        } catch (err) {
+            console.log('response error', err);
+        }
+    }
+}
+
+// Поиск
+export const getMoviesSearch = (inputSearchValue) => {
+    return async (dispatch) => {
+        try {
+            const responce = await axios.get(`http://localhost:3000/films?q=${inputSearchValue}`)
+            dispatch ({
+                type: ACTION_TYPES.GET_SEARCH_FILMS,
+                payload: responce.data
+            })
+    
+        } catch (err) {
+            console.log('response error', err);
+        }
     }
 }

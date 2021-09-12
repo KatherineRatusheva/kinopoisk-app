@@ -1,5 +1,4 @@
 import React from 'react';
-// import './index.css'
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import NavbarTags from '../../components/navTags';
@@ -12,8 +11,6 @@ const FilterPage = () => {
     const selectValueFilterYear = useSelector((state) => { return state.selectValueFilterYear })
     const selectValueFilterStar = useSelector((state) => { return state.selectValueFilterStar })
     const films = useSelector((state) => { return state.films })
-
-
 
     return (
 

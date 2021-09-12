@@ -8,6 +8,7 @@ const initialState = {
 
     email: '',
     password: '',
+    login: '',
     user: null,
     accessToken: '',
 
@@ -55,7 +56,7 @@ const reducer = (state = initialState, action) => {
         }
     }
 
-// Авторизация
+// Авторизация/ регистрация
     if(action.type === ACTION_TYPES.INPUT_EMAIL) {
         return {
             ...state,
@@ -74,6 +75,13 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             user: action.payload,
+        }
+    }
+
+    if(action.type === ACTION_TYPES.INPUT_LOGIN) {
+        return {
+            ...state,
+            login: action.payload,
         }
     }
 

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import './index.css';
 
 const SaveFilms = () => {
 
-    const dispatch = useDispatch()
     const saveFilmsUser = useSelector((state) => { return state.saveFilmsUser })
     const user = useSelector((state) => { return state.user })
 
@@ -16,7 +15,7 @@ const SaveFilms = () => {
             <>
             <h1 className='category-title'>Моя подборка</h1>
             <div className='category-body'>
-                {saveFilmsUser.map((item =>
+                {saveFilmsUser?.map((item =>
                 <div key={item.id} className='films-card'>
                     <div className='film-rating'> {item.rating} </div>
                     <Link to={`/film/${item.id}`}>
