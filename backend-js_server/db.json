@@ -5,6 +5,12 @@
       "password": "$2a$10$j8OeHv/LZFq7jC0vn5KcBerB3RZa5/HXdlCgs.Vh4.v3sF4snO6CW",
       "login": "k.ratusheva",
       "id": 1
+    },
+    {
+      "email": "test@mail.ru",
+      "password": "$2a$10$ukCvKt3vtQWfuMsc2WoPcO.rYKNrL3mlY5LNzqZ02ipLeHn.BWi7m",
+      "login": "test",
+      "id": 2
     }
   ],
   "films": [
@@ -70,7 +76,7 @@
         "Виола Дэвис"
       ],
       "img": "https://gamemag.ru/images/imagemanager/cache/ee/dbcf/eedbcf_the-suicide-squad-new-team-poster-elba-robbie.jpg",
-      "video": "https://youtu.be/gvTh_xsUCQ4"
+      "video": "https://youtu.be/73zbG_8DtoE"
     },
     {
       "id": "tihoe-mesto-2",
@@ -100,7 +106,7 @@
         "Шери Фэйрчайлд"
       ],
       "img": "https://media.kg-portal.ru/movies/q/quietplace2/posters/quietplace2_3.jpg",
-      "video": "https://youtu.be/5Rjm8TVa1T0"
+      "video": "https://youtu.be/gYwowpbn_xs"
     },
     {
       "id": "gnev-chelovecheskij",
@@ -132,7 +138,7 @@
         "Нив Алгар"
       ],
       "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/f3be8b0b-456c-4499-a4f3-79e1fee1ae3a/800x800",
-      "video": "https://youtu.be/YLw55x-zOSo"
+      "video": "https://youtu.be/EFYEni2gsK0"
     },
     {
       "id": "vremja",
@@ -164,7 +170,7 @@
         "Элайза Сканлен"
       ],
       "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/a2f5c334-8266-4d8d-b211-cd25ca9f0921/600x900",
-      "video": "https://youtu.be/B9H3ya_XNT0"
+      "video": "https://youtu.be/A4U2pMRV9_k"
     },
     {
       "id": "krolik-piter-2",
@@ -230,7 +236,7 @@
         "Демиан Бичир"
       ],
       "img": "https://fs.kinomania.ru/file/film/a/a2/aa24e90b12bb58b447c4561423f6a6b4.jpeg",
-      "video": "https://youtu.be/3wizMwPZcjk"
+      "video": "https://youtu.be/tQL0ecktIDg"
     },
     {
       "id": "krasotka-na-vzvode",
@@ -294,7 +300,7 @@
         "Рэйф Файнс"
       ],
       "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/39a12934-12ee-4032-92ac-804c1ae89b8b/800x800",
-      "video": "https://youtu.be/PJX6a06gnEY"
+      "video": "https://youtu.be/N1r36HTysDM"
     },
     {
       "id": "otcovstvo",
@@ -356,7 +362,7 @@
         "Шон Тарджото"
       ],
       "img": "https://upload.wikimedia.org/wikipedia/ru/b/bc/Pig_%28film%2C_2021%29.jpg",
-      "video": "https://youtu.be/hReh8pZb408"
+      "video": "https://youtu.be/AZJIWnaC2Xs"
     },
     {
       "id": "luka",
