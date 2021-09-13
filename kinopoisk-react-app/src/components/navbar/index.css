@@ -8,16 +8,28 @@
     background-color: #191c28;
 }
 
+.navbar-menu {
+    font-weight: 600;
+}
+
 .navbar-main{
     margin-left: 16px;
 }
 
-.navbar-new, .navbar-popular, .navbar-top, .navbar-main  {
+.navbar-new, .navbar-popular, .navbar-top, .navbar-main {
     margin-right: 50px;
     text-decoration: none;
     color: #bbc2ce;
     list-style-type: none;
     cursor: pointer;
+}
+
+.navbar-new:hover, .navbar-popular:hover, .navbar-top:hover, .navbar-main:hover {
+    color: white;
+}
+
+.navbar-new:focus, .navbar-popular:focus, .navbar-top:focus, .navbar-main:focus {
+    color: white;
 }
 
 .navbar-save {

@@ -1,12 +1,16 @@
 .film-card {
     margin: 0 auto;
     padding-top: 60px;
-    width: 70%;
+    width: 65%;
     background-color: #191c28;
 }
 
 .film-body {
     display: flex;
+}
+
+.film-subbody {
+    font-size: 15px;
 }
 
 .film-picture {
@@ -19,11 +23,12 @@
     position: relative;
     margin-bottom: 30px;
     font-size: 30px;
+    font-weight: 600;
     color: #bbc2ce;
 }
 
 .film-description {
-    padding: 50px 0;
+    padding-bottom: 80px;
     font-size: 15px;
     color: #bbc2ce;
 }
@@ -45,12 +50,13 @@
 
 .film-save {
     position: relative;
-    left: 50px;
+    left: 45px;
     margin-top: 20px;
-    width: 140px;
-    height: 40px;
+    width: 150px;
+    height: 42px;
     border-radius: 10px;
     background-color: #d43053;
+    font-size: 14px;
     color: white;
     cursor: pointer;
     border: none;
@@ -62,6 +68,7 @@
     margin-top: 20px;
     width: 140px;
     height: 40px;
+    font-size: 14px;
     border-radius: 10px;
     background-color: #74a42b;
     color: white;
@@ -76,4 +83,10 @@
     position: absolute;
     top: 13px;
     margin-left: 10px;
+}
+
+.film-video {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
 }

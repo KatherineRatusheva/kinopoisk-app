@@ -4,13 +4,14 @@
     padding: 20px;
     margin-bottom: 30px;
     width: 95%;
+    font-size: 14px;
     background-color: #1f232e;
 }
 
 .dropdown {
     position: relative;
     width: 140px;
-    height: 25px;
+    height: 20px;
     padding: 12px 20px;
     display: flex;
     background: #242835;

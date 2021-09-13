@@ -13,7 +13,7 @@ const SaveFilms = () => {
         <div className='save-container'>
             {user ?
             <>
-            <h1 className='category-title'>Моя подборка</h1>
+            <h1 className='category-title'>Сохраненные фильмы</h1>
             <div className='category-body'>
                 {saveFilmsUser?.map((item =>
                 <div key={item.id} className='films-card'>

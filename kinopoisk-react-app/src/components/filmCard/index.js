@@ -5,6 +5,8 @@ import { ACTION_TYPES } from "../../constants";
 import { Redirect, useParams } from 'react-router-dom';
 import './index.css';
 import Swal from 'sweetalert2';
+import ReactPlayer from 'react-player/youtube'
+import { getMoviesCard } from '../../actions'
 
 import { Rating } from 'react-simple-star-rating';
 
@@ -12,45 +14,33 @@ const FilmCard = () => {
     const dispatch = useDispatch()
     const cardFilm = useSelector((state) => { return state.cardFilm })
     const rating = useSelector((state) => { return state.rating })
-    const accessToken = useSelector((state) => { return state.accessToken })
     const saveFilmsUser = useSelector((state) => { return state.saveFilmsUser })
     const user = useSelector((state) => { return state.user })
 
     const {id} = useParams()
 
-    const getMoviesCard = async (id) => {
-        try {
-            const responce = await axios.get(`http://localhost:3000/films/${id}`)
-            dispatch ({
-                type: ACTION_TYPES.CLICK_FILM,
-                payload: responce.data
-            })
-
-        } catch (err) {
-            console.log('response error', err);
-        }
-    }
-    
     useEffect(() => {
-        getMoviesCard(id)
+        dispatch(getMoviesCard(id))
+        window.scrollTo(0, 0)
     }, [getMoviesCard])
 
 
     // сохранить фильм в избранное
-    const [button, setButton] = useState(false)
+    const [buttonSaveFilm, setButtonSaveFilm] = useState(false) // кнопка 'Буду смотреть' если нет пользователя
 
     const saveFilm = async () => {
+        
         if(user) {
 
             try {
-                const responce = await axios.patch(`http://localhost:3000/users/${user.id}`,
+                const responce = await axios.patch(`http://localhost:3000/users/${user.id}`, 
                 {
-                    "SaveFilmName": [...saveFilmsUser, cardFilm]
+                    "saveFilms": [ cardFilm]
                 })
                 dispatch ({
                     type: ACTION_TYPES.SAVE_FILM_USER,
-                    payload: responce.data.SaveFilmName
-                })
+                    payload: responce.data.saveFilms
+                }) 
             } catch (err) {
                 console.log('response error', err);
             }
@@ -62,17 +52,17 @@ const FilmCard = () => {
             text: 'Вы должны зарегистрироваться!',
         }).then((result) => {
             if (result.isConfirmed) {
-                setButton(true)
+                setButtonSaveFilm(true)
             }})
     }
 
-  const handleRating = (rate) => {
-    dispatch ({
-        type: ACTION_TYPES.CHANGE_RATING,
-        payload: rate
-    })
-  }
-    
+//   const handleRating = (rate) => {
+//     dispatch ({
+//         type: ACTION_TYPES.CHANGE_RATING,
+//         payload: rate
+//     })
+//   }
+
     return (
         <div className='film-card'>
             
@@ -108,22 +98,23 @@ const FilmCard = () => {
                     <div className='col'>
                         <div className='col-name'> Рейтинг: {cardFilm.rating} </div>
                         <div className='col-description'>
-                        <Rating onClick={handleRating} ratingValue={rating} stars={10} /> </div>
+                        <Rating ratingValue={cardFilm.rating} stars={10} /> </div>
                     </div>
                     
                 </div>
             </div>
 
-            <button className='film-save' onClick={saveFilm}>Буду смотреть</button>
-
-            {/* {buttonSaveFilm === 'true' ? 
-            <button className='film-save-add'>Добавлен в избранное</button>
+            {saveFilmsUser && 
+            saveFilmsUser.find(movie => movie.name === cardFilm.name) ? 
+            <button className='film-save-add'>Фильм сохранен</button>
             : <button className='film-save' onClick={saveFilm}>Буду смотреть</button>
-            } */}
+            }
 
-            {button === true && <Redirect to="/sign-in"/>}
+            {buttonSaveFilm === true && <Redirect to="/sign-in"/>}
 
+            <div className='film-video'><ReactPlayer width='100%' height='550px' controls={true} url={cardFilm.video} /></div>
             <div className='film-description'> {cardFilm.description} </div>
+
         </div>
     )
 }

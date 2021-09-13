@@ -32,10 +32,6 @@ export default function App() {
 
         <Switch>
 
-          <Route path="/top">
-            <NavCategory />
-          </Route>
-
           <Route path="/popular">
             <NavCategory />
           </Route>

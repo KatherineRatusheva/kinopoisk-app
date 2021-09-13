@@ -27,7 +27,6 @@ const Navbar = () => {
             <Link to={'/'} className='navbar-main'>Главная</Link>
             <Link to={'/new'} className='navbar-new' onClick={()=> getTypeFilm("Новинки")}>Новинки</Link>
             <Link to={'/popular'} className='navbar-popular' onClick={()=> getTypeFilm("Популярные")}>Популярные</Link>
-            <Link to={'/top'} className='navbar-top' onClick={()=> getTypeFilm("ТОП")}>ТОП</Link>
             <Search />
             </div>
             <div className='navbar-user'>

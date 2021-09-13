@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
     width: 150px;
+    font-size: 14px;
     color: #bbc2ce;
 }
 
@@ -28,12 +29,11 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding-top: 12px;
-    width: 150px;
-    height: 40px;
+    padding: 13px 25px;
     border-radius: 10px;
     background-color: #d43053;
     color: white;
+    font-size: 14px;
     cursor: pointer;
     border: none;
 }
@@ -57,6 +57,7 @@
     width: 120px;
     height: 51px;
     font-size: 14px;
+    font-weight: 600;
     background-color: #242835;
     color: #bbc2ce;
     border-radius: 10px;
@@ -72,6 +73,7 @@
     width: 120px;
     height: 51px;
     font-size: 14px;
+    font-weight: 600;
     background-color: #46506c;
     color: #bbc2ce;
     border-radius: 10px;

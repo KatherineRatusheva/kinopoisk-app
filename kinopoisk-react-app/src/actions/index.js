@@ -22,7 +22,7 @@ export const signIn = (email, password) => {
             })
             dispatch ({
                 type: ACTION_TYPES.SAVE_FILM_USER,
-                payload: responce.data.user.SaveFilmName
+                payload: responce.data.user.saveFilms
             })
             sessionStorage.setItem('accessTokenUser', responce.data.accessToken)
             sessionStorage.setItem('userId', responce.data.user.id)
@@ -70,14 +70,17 @@ export const getAuthorizedUser = () => {
         if (token) {
 
             try {
-                const responce = await axios.get(`http://localhost:3000/users/${sessionStorage.userId}`)
+                const responce = await axios.get(`http://localhost:3000/users/${sessionStorage.userId}`, {
+                    headers: {"Authorization" : `Bearer ${token}`}
+                })
+                
                 dispatch ({
                     type: ACTION_TYPES.GET_USER,
                     payload: responce.data
                 })
                 dispatch ({
                     type: ACTION_TYPES.SAVE_FILM_USER,
-                    payload: responce.data.SaveFilmName
+                    payload: responce.data.saveFilms
                 })
             } catch (err) {
                 console.log('response error', err);
@@ -103,7 +106,23 @@ export const getMovies = () => {
     }
 }
 
-// Выводить фильмы (меню)
+// Получать карточки фильмов
+export const getMoviesCard = (id) => {
+    return async (dispatch) => {
+        try {
+            const responce = await axios.get(`http://localhost:3000/films/${id}`)
+            dispatch ({
+                type: ACTION_TYPES.CLICK_FILM,
+                payload: responce.data
+            })
+    
+        } catch (err) {
+            console.log('response error', err);
+        }
+    }
+}
+
+// Выводить фильмы по категориям
 export const getMoviesNavbar = (selectCategoryMenu) => {
     return async (dispatch) => {
         try {
