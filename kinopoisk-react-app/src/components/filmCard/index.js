@@ -35,7 +35,7 @@ const FilmCard = () => {
             try {
                 const responce = await axios.patch(`http://localhost:3000/users/${user.id}`, 
                 {
-                    "saveFilms": [ cardFilm]
+                    "saveFilms": [ ...saveFilmsUser, cardFilm]
                 })
                 dispatch ({
                     type: ACTION_TYPES.SAVE_FILM_USER,
@@ -112,7 +112,7 @@ const FilmCard = () => {
 
             {buttonSaveFilm === true && <Redirect to="/sign-in"/>}
 
-            <div className='film-video'><ReactPlayer width='100%' height='550px' controls={true} url={cardFilm.video} /></div>
+            <div className='film-video'><ReactPlayer width='100%' height='450px' controls={true} url={cardFilm.video} /></div>
             <div className='film-description'> {cardFilm.description} </div>
 
         </div>

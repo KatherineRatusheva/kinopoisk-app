@@ -8,6 +8,10 @@ const SaveFilms = () => {
     const saveFilmsUser = useSelector((state) => { return state.saveFilmsUser })
     const user = useSelector((state) => { return state.user })
 
+    const deleteMovie = () => {
+        
+    }
+
     return (
 
         <div className='save-container'>
@@ -16,8 +20,9 @@ const SaveFilms = () => {
             <h1 className='category-title'>Сохраненные фильмы</h1>
             <div className='category-body'>
                 {saveFilmsUser?.map((item =>
-                <div key={item.id} className='films-card'>
-                    <div className='film-rating'> {item.rating} </div>
+                <div key={item.id} className='save-films-card'>
+                    <button className='button-delete' onClick={deleteMovie}></button>
+                    <div className='film-rating-save'> {item.rating} </div>
                     <Link to={`/film/${item.id}`}>
                         <img className='film-img' src={item.img} />
                     </Link>

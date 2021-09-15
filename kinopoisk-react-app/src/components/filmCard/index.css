@@ -15,14 +15,14 @@
 
 .film-picture {
     padding-right: 60px;
-    width: 250px;
-    height: 350px;
+    width: 320px;
+    height: 420px;
 }
 
 .film-title {
     position: relative;
     margin-bottom: 30px;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 600;
     color: #bbc2ce;
 }
@@ -50,7 +50,7 @@
 
 .film-save {
     position: relative;
-    left: 45px;
+    left: 65px;
     margin-top: 20px;
     width: 150px;
     height: 42px;
@@ -64,9 +64,9 @@
 
 .film-save-add {
     position: relative;
-    left: 50px;
+    left: 65px;
     margin-top: 20px;
-    width: 140px;
+    width: 150px;
     height: 40px;
     font-size: 14px;
     border-radius: 10px;
