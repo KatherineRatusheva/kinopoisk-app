@@ -17,6 +17,8 @@
     {
       "id": "rajja-i-poslednij-drakon",
       "name": "Райя и последний дракон",
+      "tagline": "—",
+      "time": "107 мин. / 01:47",
       "year": "2021",
       "age": "6+",
       "rating": 8.2,
@@ -49,6 +51,8 @@
     {
       "id": "otrjad-samoubijc-2-missija-navylet",
       "name": "Отряд самоубийц 2: Миссия навылет",
+      "tagline": "«Они до смерти хотят спасти мир»",
+      "time": "132 мин. / 02:12",
       "year": "2021",
       "age": "18+",
       "rating": 6.9,
@@ -81,6 +85,8 @@
     {
       "id": "tihoe-mesto-2",
       "name": "Тихое место 2",
+      "tagline": "«Silence is Not Enough»",
+      "time": "90 мин. / 01:30",
       "year": "2021",
       "age": "16+",
       "rating": 6.7,
@@ -111,6 +117,8 @@
     {
       "id": "gnev-chelovecheskij",
       "name": "Гнев человеческий",
+      "tagline": "—",
+      "time": "119 мин. / 01:59",
       "year": "2021",
       "age": "18+",
       "rating": 7.6,
@@ -143,6 +151,8 @@
     {
       "id": "vremja",
       "name": "Время",
+      "tagline": "«Жизнь — лишь вопрос времени»",
+      "time": "113 мин. / 01:53",
       "year": "2021",
       "age": "16+",
       "rating": 6.3,
@@ -175,6 +185,8 @@
     {
       "id": "krolik-piter-2",
       "name": "Кролик Питер 2",
+      "tagline": "«И целого сада мало»",
+      "time": "93 мин. / 01:33",
       "year": "2021",
       "age": "6+",
       "rating": 6.4,
@@ -209,6 +221,8 @@
     {
       "id": "godzilla-protiv-konga",
       "name": "Годзилла против Конга",
+      "tagline": "«Один из них падет»",
+      "time": "113 мин. / 01:53",
       "year": "2021",
       "age": "12+",
       "rating": 6.2,
@@ -241,6 +255,8 @@
     {
       "id": "krasotka-na-vzvode",
       "name": "Красотка на взводе",
+      "tagline": "«You're in for a shock»",
+      "time": "91 мин. / 01:31",
       "year": "2021",
       "age": "18+",
       "rating": 5.6,
@@ -272,6 +288,8 @@
     {
       "id": "ne-vremja-umirat",
       "name": "Не время умирать",
+      "tagline": "—",
+      "time": "163 мин. / 02:43",
       "year": "2021",
       "age": "12+",
       "rating": 7.4,
@@ -305,6 +323,8 @@
     {
       "id": "otcovstvo",
       "name": "Отцовство",
+      "tagline": "«In It, Together»",
+      "time": "109 мин. / 01:49",
       "year": "2021",
       "age": "18+",
       "rating": 6.7,
@@ -336,6 +356,8 @@
     {
       "id": "svinja",
       "name": "Свинья",
+      "tagline": "«We don't get a lot of things to really care about»",
+      "time": "92 мин. / 01:32",
       "year": "2021",
       "age": "18+",
       "rating": 6.3,
@@ -367,6 +389,8 @@
     {
       "id": "luka",
       "name": "Лука",
+      "tagline": "—",
+      "time": "95 мин. / 01:35",
       "year": "2021",
       "age": "6+",
       "rating": 7.6,
@@ -397,6 +421,8 @@
     {
       "id": "put-domoj",
       "name": "Путь домой",
+      "tagline": "«Её ведёт не поводок, а любовь»",
+      "time": "90 мин. / 01:30",
       "year": "2019",
       "age": "6+",
       "rating": 7.3,
@@ -429,6 +455,8 @@
     {
       "id": "verju-v-ljubov",
       "name": "Верю в любовь",
+      "tagline": "«Одна жизнь может изменить мир»",
+      "time": "115 мин. / 01:55",
       "year": "2020",
       "age": "12+",
       "rating": 6.5,
@@ -461,6 +489,8 @@
     {
       "id": "esche-po-odnoj",
       "name": "Еще по одной",
+      "tagline": "—",
+      "time": "110 мин. / 01:50",
       "year": "2020",
       "age": "18+",
       "rating": 7.5,
@@ -493,6 +523,8 @@
     {
       "id": "dzhoker",
       "name": "Джокер 2019",
+      "tagline": "«Сделай счастливое лицо»",
+      "time": "122 мин. / 02:02",
       "year": "2019",
       "age": "18+",
       "rating": 8.1,
@@ -526,6 +558,8 @@
     {
       "id": "krujella",
       "name": "Круэлла",
+      "tagline": "«Hello cruel world»",
+      "time": "134 мин. / 02:14",
       "year": "2021",
       "age": "12+",
       "rating": 7.3,
@@ -557,6 +591,8 @@
     {
       "id": "mortal-kombat",
       "name": "Мортал Комбат",
+      "tagline": "—",
+      "time": "110 мин. / 01:50",
       "year": "2021",
       "age": "18+",
       "rating": 6.2,
@@ -589,6 +625,8 @@
     {
       "id": "intouchables",
       "name": "1+1",
+      "tagline": "«Sometimes you have to reach into someone else's world to find out what's missing in your own»",
+      "time": "112 мин. / 01:52",
       "year": "2011",
       "age": "16+",
       "rating": 9,
@@ -620,6 +658,8 @@
     {
       "id": "the-wolf-of-wall-street",
       "name": "Волк с Уолл-стрит",
+      "tagline": "«Earn. Spend. Party»",
+      "time": "180 мин. / 03:00",
       "year": "2013",
       "age": "18+",
       "rating": 8.2,
@@ -650,6 +690,8 @@
     {
       "id": "legend",
       "name": "Легенда",
+      "tagline": "«Преступление – как профессия. Взлет и падение легендарных близнецов Крэй»",
+      "time": "131 мин. / 02:11",
       "year": "2015",
       "age": "18+",
       "rating": 8,
@@ -679,6 +721,8 @@
     {
       "id": "interstellar",
       "name": "Интерстеллар",
+      "tagline": "«Следующий шаг человечества станет величайшим»",
+      "time": "169 мин. / 02:49",
       "year": "2014",
       "age": "16+",
       "rating": 9,
@@ -707,6 +751,8 @@
     {
       "id": "the-mountain-between-us",
       "name": "Между нами горы",
+      "tagline": "«Что, если бы твоя жизнь зависела от незнакомца?»",
+      "time": "112 мин. / 01:52",
       "year": "2017",
       "age": "16+",
       "rating": 6.7,
@@ -736,6 +782,8 @@
     {
       "id": "the-call-of-the-wild",
       "name": "Зов предков",
+      "tagline": "«Based on the Legendary Novel»",
+      "time": "100 мин. / 01:40",
       "year": "2020",
       "age": "6+",
       "rating": 7.4,
@@ -766,6 +814,8 @@
     {
       "id": "kingsman",
       "name": "Kingsman: Секретная служба",
+      "tagline": "«Manners maketh man»",
+      "time": "130 мин. / 02:10",
       "year": "2015",
       "age": "18+",
       "rating": 7.6,
@@ -798,6 +848,8 @@
     {
       "id": "marksman",
       "name": "Заступник",
+      "tagline": "«Justice comes down to him»",
+      "time": "108 мин. / 01:48",
       "year": "2021",
       "age": "16+",
       "rating": 6.2,
@@ -828,6 +880,8 @@
     {
       "id": "mauritanian",
       "name": "Мавританец",
+      "tagline": "«Особо опасен. Абсолютно невиновен?»",
+      "time": "129 мин. / 02:09",
       "year": "2021",
       "age": "18+",
       "rating": 7.3,
@@ -859,6 +913,8 @@
     {
       "id": "gone-girl",
       "name": "Исчезнувшая",
+      "tagline": "«Что имеем — не храним, потерявши — плачем»",
+      "time": "149 мин. / 02:29",
       "year": "2014",
       "age": "16+",
       "rating": 8.1,
@@ -888,6 +944,8 @@
     {
       "id": "a-star-is-born",
       "name": "Звезда родилась",
+      "tagline": "—",
+      "time": "136 мин. / 02:16",
       "year": "2018",
       "age": "18+",
       "rating": 8.6,
@@ -917,6 +975,8 @@
     {
       "id": "the-great-gatsby",
       "name": "Великий Гэтсби",
+      "tagline": "«Нельзя вернуть прошлое? Ну, конечно, можно!»",
+      "time": "143 мин. / 02:23",
       "year": "2013",
       "age": "16+",
       "rating": 7.9,
