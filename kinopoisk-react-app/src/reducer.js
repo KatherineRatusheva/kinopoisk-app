@@ -12,8 +12,6 @@ const initialState = {
     user: null,
     accessToken: '',
 
-    rating: false,
-
     inputSearch: '',
     searchFilms: [],
 
@@ -89,14 +87,6 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             accessToken: action.payload,
-        }
-    }
-
-///////
-    if(action.type === ACTION_TYPES.CHANGE_RATING) {
-        return {
-            ...state,
-            rating: action.payload,
         }
     }
 

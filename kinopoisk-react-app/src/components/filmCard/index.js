@@ -13,7 +13,6 @@ import { Rating } from 'react-simple-star-rating';
 const FilmCard = () => {
     const dispatch = useDispatch()
     const cardFilm = useSelector((state) => { return state.cardFilm })
-    const rating = useSelector((state) => { return state.rating })
     const saveFilmsUser = useSelector((state) => { return state.saveFilmsUser })
     const user = useSelector((state) => { return state.user })
 
@@ -31,7 +30,20 @@ const FilmCard = () => {
     const saveFilm = async () => {
         
         if(user) {
-
+            if (!saveFilmsUser) {
+                try {
+                    const responce = await axios.patch(`http://localhost:3000/users/${user.id}`, 
+                    {
+                        "saveFilms": [cardFilm]
+                    })
+                    dispatch ({
+                        type: ACTION_TYPES.SAVE_FILM_USER,
+                        payload: responce.data.saveFilms
+                    }) 
+                } catch (err) {
+                    console.log('response error', err);
+                }
+            } else 
             try {
                 const responce = await axios.patch(`http://localhost:3000/users/${user.id}`, 
                 {
@@ -56,12 +68,6 @@ const FilmCard = () => {
             }})
     }
 
-//   const handleRating = (rate) => {
-//     dispatch ({
-//         type: ACTION_TYPES.CHANGE_RATING,
-//         payload: rate
-//     })
-//   }
 
     return (
         <div className='film-card'>
@@ -109,7 +115,6 @@ const FilmCard = () => {
             <button className='film-save-add'>Фильм сохранен</button>
             : <button className='film-save' onClick={saveFilm}>Буду смотреть</button>
             }
-
             {buttonSaveFilm === true && <Redirect to="/sign-in"/>}
 
             <div className='film-video'><ReactPlayer width='100%' height='450px' controls={true} url={cardFilm.video} /></div>
