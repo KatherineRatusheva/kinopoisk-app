@@ -57,3 +57,7 @@
     margin: 0 1.5%;
     margin-bottom: 4em;
 }
+
+.save-films-card:hover {
+    transform: scale(1.1);
+}

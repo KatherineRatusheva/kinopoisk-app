@@ -153,3 +153,53 @@ export const getMoviesSearch = (inputSearchValue) => {
         }
     }
 }
+
+// Добавить фильм в избранное
+export const addSaveMovieApi = (saveFilmsUser, cardFilm) => {
+    return async (dispatch) => {
+        if (!saveFilmsUser) {
+            try {
+                const responce = await axios.patch(`http://localhost:3000/users/${sessionStorage.userId}`, 
+                {
+                    "saveFilms": [cardFilm]
+                })
+                dispatch ({
+                    type: ACTION_TYPES.SAVE_FILM_USER,
+                    payload: responce.data.saveFilms
+                }) 
+            } catch (err) {
+                console.log('response error', err);
+            }
+        } else 
+        try {
+            const responce = await axios.patch(`http://localhost:3000/users/${sessionStorage.userId}`, 
+            {
+                "saveFilms": [ ...saveFilmsUser, cardFilm]
+            })
+            dispatch ({
+                type: ACTION_TYPES.SAVE_FILM_USER,
+                payload: responce.data.saveFilms
+            }) 
+        } catch (err) {
+            console.log('response error', err);
+        }
+    }
+}
+
+// Удалить фильм из сохраненных
+export const deleteMovieApi = (newArraySaveMovies) => {
+    return async (dispatch) => {
+        try {
+            const responce = await axios.patch(`http://localhost:3000/users/${sessionStorage.userId}`, 
+            {
+                "saveFilms": newArraySaveMovies
+            })
+            dispatch ({
+                type: ACTION_TYPES.SAVE_FILM_USER,
+                payload: responce.data.saveFilms
+            })
+        } catch (err) {
+            console.log('response error', err);
+        }
+    }
+}

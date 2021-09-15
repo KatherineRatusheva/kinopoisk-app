@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux';
-import { ACTION_TYPES } from "../../constants";
 import { Redirect, useParams } from 'react-router-dom';
 import './index.css';
 import Swal from 'sweetalert2';
 import ReactPlayer from 'react-player/youtube'
-import { getMoviesCard } from '../../actions'
-
+import { getMoviesCard, addSaveMovieApi } from '../../actions'
 import { Rating } from 'react-simple-star-rating';
+
 
 const FilmCard = () => {
     const dispatch = useDispatch()
+
     const cardFilm = useSelector((state) => { return state.cardFilm })
     const saveFilmsUser = useSelector((state) => { return state.saveFilmsUser })
     const user = useSelector((state) => { return state.user })
@@ -23,40 +22,13 @@ const FilmCard = () => {
         window.scrollTo(0, 0)
     }, [getMoviesCard])
 
-
     // сохранить фильм в избранное
     const [buttonSaveFilm, setButtonSaveFilm] = useState(false) // кнопка 'Буду смотреть' если нет пользователя
 
     const saveFilm = async () => {
-        
-        if(user) {
-            if (!saveFilmsUser) {
-                try {
-                    const responce = await axios.patch(`http://localhost:3000/users/${user.id}`, 
-                    {
-                        "saveFilms": [cardFilm]
-                    })
-                    dispatch ({
-                        type: ACTION_TYPES.SAVE_FILM_USER,
-                        payload: responce.data.saveFilms
-                    }) 
-                } catch (err) {
-                    console.log('response error', err);
-                }
-            } else 
-            try {
-                const responce = await axios.patch(`http://localhost:3000/users/${user.id}`, 
-                {
-                    "saveFilms": [ ...saveFilmsUser, cardFilm]
-                })
-                dispatch ({
-                    type: ACTION_TYPES.SAVE_FILM_USER,
-                    payload: responce.data.saveFilms
-                }) 
-            } catch (err) {
-                console.log('response error', err);
-            }
 
+        if(user) {
+            dispatch(addSaveMovieApi(saveFilmsUser, cardFilm))
         } else
         Swal.fire({
             icon: 'error',
@@ -65,7 +37,8 @@ const FilmCard = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 setButtonSaveFilm(true)
-            }})
+            }
+        })
     }
 
 
