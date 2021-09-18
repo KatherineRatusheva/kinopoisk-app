@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect, useParams } from 'react-router-dom';
+import { Redirect, useParams, Link } from 'react-router-dom';
 import './index.css';
 import Swal from 'sweetalert2';
 import ReactPlayer from 'react-player/youtube'
-import { getMoviesCard, addSaveMovieApi } from '../../actions'
+import { getMoviesCard, addSaveMovieApi, getMovies } from '../../actions'
 import { Rating } from 'react-simple-star-rating';
 
 
@@ -14,13 +14,20 @@ const FilmCard = () => {
     const cardFilm = useSelector((state) => { return state.cardFilm })
     const saveFilmsUser = useSelector((state) => { return state.saveFilmsUser })
     const user = useSelector((state) => { return state.user })
+    const films = useSelector((state) => { return state.films })
 
     const {id} = useParams()
 
     useEffect(() => {
         dispatch(getMoviesCard(id))
+        dispatch(getMovies())
         window.scrollTo(0, 0)
     }, [getMoviesCard])
+
+    const getMovieReccomend = (id) => {
+        dispatch(getMoviesCard(id))
+        window.scrollTo(0, 0)  
+    }
 
     // сохранить фильм в избранное
     const [buttonSaveFilm, setButtonSaveFilm] = useState(false) // кнопка 'Буду смотреть' если нет пользователя
@@ -52,14 +59,19 @@ const FilmCard = () => {
                     <div className='film-title'> {cardFilm.name} 
                         <span className='film-age'> {cardFilm.age} </span>
                     </div>
+
+                    <div className='col'>
+                        <div className='col-name'> Слоган: </div>
+                        <div className='col-description'>{cardFilm.tagline} </div>
+                    </div>
                     
                     <div className='col'>
-                        <div className='col-name'> Год производства: </div>
+                        <div className='col-name'> Год: </div>
                         <div className='col-description'> {cardFilm.year} </div>
                     </div>
                     <div className='col'>
                         <div className='col-name'> Страна: </div>
-                        <div className='col-description'> {cardFilm.country?.map((item) => `${item} ` )} </div>
+                        <div className='col-description'> {cardFilm.country?.map((item) => `${item}, ` )} </div>
                     </div>
                     <div className='col'>
                         <div className='col-name'> Жанр: </div>
@@ -73,11 +85,16 @@ const FilmCard = () => {
                         <div className='col-name'> В главных ролях: </div>
                         <div className='col-description'> {cardFilm.actors?.map((item) => `${item}, ` )} </div>
                     </div>
+                    <div className='col'>
+                        <div className='col-name'> Время: </div>
+                        <div className='col-description'> {cardFilm.time} </div>
+                    </div>
 
                     <div className='col'>
-                        <div className='col-name'> Рейтинг: {cardFilm.rating} </div>
-                        <div className='col-description'>
-                        <Rating ratingValue={cardFilm.rating} stars={10} /> </div>
+                        <div className='col-name'> Рейтинг: <span className='rating'>{cardFilm.rating}</span> </div>
+                        <div className='col-rating'>
+                        <Rating ratingValue={cardFilm.rating} stars={10} />
+                        </div>
                     </div>
                     
                 </div>
@@ -92,6 +109,22 @@ const FilmCard = () => {
 
             <div className='film-video'><ReactPlayer width='100%' height='450px' controls={true} url={cardFilm.video} /></div>
             <div className='film-description'> {cardFilm.description} </div>
+
+            <div className='recommend-movie'>
+                <div className='recommend-movie-title'>Рекомендуем посмотреть:</div>
+
+                <div className='recommend-movie-body'>
+                {films.filter(item => item.rating > '8').map(item => (
+                <div key={item.id} className='films-card'>
+                    <div className='film-rating'> {item.rating} </div>
+                    <Link to={`/film/${item.id}`} onClick={() => getMovieReccomend(item.id)}>
+                        <img className='film-img' src={item.img} />
+                    </Link>
+                    <div className='film-name'> {item.name} </div>
+                </div>
+                )).slice(0,6)}
+                </div>
+            </div>
 
         </div>
     )

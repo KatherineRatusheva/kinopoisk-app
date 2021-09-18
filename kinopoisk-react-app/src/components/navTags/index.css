@@ -8,11 +8,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;
-    padding: 0 19px;
-    width: 80px;
+    margin: 0px 10px;
+    padding: 0 13px;
+    width: 77px;
     height: 51px;
-    font-size: 14px;
+    font-size: 13px;
     background-color: #242835;
     color: #bbc2ce;
     border-radius: 10px;
@@ -25,4 +25,15 @@ a {
 
 .tag-name:hover {
     background-color: #46506c;
+}
+
+@media (max-width: 768px) {
+    .tags-menu {
+        flex-wrap: wrap;
+    }
+
+    .tag-name {
+        margin: 10px 10px;
+        padding: 0 14px;
+    }
 }

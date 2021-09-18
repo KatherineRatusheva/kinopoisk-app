@@ -16,19 +16,19 @@
 .film-picture {
     padding-right: 60px;
     width: 320px;
-    height: 420px;
+    height: 440px;
 }
 
 .film-title {
     position: relative;
-    margin-bottom: 30px;
-    font-size: 32px;
+    margin-bottom: 20px;
+    font-size: 37px;
     font-weight: 600;
     color: #bbc2ce;
 }
 
 .film-description {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
     font-size: 15px;
     color: #bbc2ce;
 }
@@ -39,8 +39,10 @@
 }
 
 .col-name {
-    width: 25%;
+    width: 30%;
     color: #bbc2ce;
+    display: flex;
+    align-items: center;
 }
 
 .col-description {
@@ -89,4 +91,63 @@
     display: flex;
     justify-content: center;
     padding: 40px 0;
+}
+
+.col-rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #bbc2ce;
+}
+
+.recommend-movie-body {
+    display: flex;
+}
+
+.recommend-movie-title {
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    color: #bbc2ce;
+}
+
+@media (max-width: 768px) {
+    .film-card {
+        width: 85%;
+        margin-top: 3%;
+    }
+
+    .film-picture {
+        padding-right: 40px;
+        width: 250px;
+        height: 370px;
+    }
+
+    .col-description {
+        width: 70%;
+    }
+
+    .film-subbody {
+        font-size: 14px;
+    }
+
+    .col {
+        margin-top: 15px;
+    }
+
+    .film-title {
+        position: absolute;
+        left: 7%;
+        top: 10%;
+    }
+
+    .film-save {
+        left: 7.5%;
+    }
 }

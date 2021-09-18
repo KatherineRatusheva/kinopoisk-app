@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ACTION_TYPES } from '../../constants';
 import './index.css'
 
-const category = ['Боевик', 'Детектив', 'Драма', 'Комедия', 'Мелодрама', 'Триллер', 'Фантастика', 'Ужасы', 'Мультфильм']
+const category = ['Боевик', 'Драма', 'Комедия', 'Мелодрама', 'Триллер', 'Семейный', 'Фантастика', 'Фэнтези', 'Мультфильм', 'Ужасы']
 
 const NavbarTags = () => {
 

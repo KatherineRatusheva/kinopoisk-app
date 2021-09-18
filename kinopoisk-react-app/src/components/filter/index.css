@@ -3,7 +3,7 @@
     margin: 0 auto;
     padding: 20px;
     margin-bottom: 30px;
-    width: 95%;
+    width: 94%;
     font-size: 14px;
     background-color: #1f232e;
 }
@@ -69,4 +69,10 @@ a {
     background: none;
     color: #bbc2ce;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .dropdown-button {
+        width: 185px;
+    }
 }
