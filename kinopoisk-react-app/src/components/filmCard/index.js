@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useParams, Link } from 'react-router-dom';
 import './index.css';
 import Swal from 'sweetalert2';
-import ReactPlayer from 'react-player/youtube'
-import { getMoviesCard, addSaveMovieApi, getMovies } from '../../actions'
+import ReactPlayer from 'react-player/youtube';
+import { getMoviesCard, addSaveMovieApi, getMovies } from '../../actions';
 import { Rating } from 'react-simple-star-rating';
 
 

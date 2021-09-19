@@ -112,7 +112,7 @@ const Filter = () => {
       <ul onClick={getValueFilterCountry}>
         {country.map((item) => 
         <Link to={`/movies/${item}`} key={item}>
-          <li>{item}</li>
+          <li className='dropdown-link'>{item}</li>
         </Link>
         )}
       </ul>
@@ -124,7 +124,7 @@ const Filter = () => {
       <ul onClick={getValueFilterYear}>
         {year.map((item) => 
         <Link to={`/movies/${item}`} key={item}>
-          <li>{item}</li>
+          <li className='dropdown-link'>{item}</li>
         </Link>
         )}
       </ul>
@@ -136,7 +136,7 @@ const Filter = () => {
       <ul onClick={getValueFilterStar}>
         {star.map((item) => 
         <Link to={`/movies/${item.value}`} key={item.value}>
-          <li value={item.value}>{item.label}</li>
+          <li className='dropdown-link' value={item.value}>{item.label}</li>
         </Link>
         )}
       </ul>

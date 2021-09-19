@@ -1,0 +1,60 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1em;
+    width: 100%;
+    height: 100px;
+    background-color: #1f232e;
+}
+
+.footer-link {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-link-instagram {
+    width: 25px;
+    height: 25px;
+    margin: 0 25px;
+    background: url(../../img/instagram.svg) no-repeat;
+    background-size: cover;
+}
+
+.footer-link-fb {
+    width: 25px;
+    height: 25px;
+    margin: 0 25px;
+    background: url(../../img/fb_icon.svg) no-repeat;
+    background-size: cover;
+}
+
+.footer-link-vk {
+    width: 25px;
+    height: 25px;
+    margin: 0 25px;
+    background: url(../../img/vk-social.svg) no-repeat;
+    background-size: cover;
+}
+
+.footer-link-twitter {
+    width: 25px;
+    height: 25px;
+    margin: 0 25px;
+    background: url(../../img/twitter.svg) no-repeat;
+    background-size: cover;
+}
+
+.footer-link-youtube {
+    width: 25px;
+    height: 25px;
+    margin: 0 25px;
+    background: url(../../img/youtube.svg) no-repeat;
+    background-size: cover;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+}

@@ -35,13 +35,13 @@ ul {
     margin: 0;
 }
 
-li {
+.dropdown-link {
     list-style: none;
     padding: 10px 20px;
     cursor: pointer;
 }
 
-li:hover {
+.dropdown-link:hover {
     background-color: #46506c;
 }
 

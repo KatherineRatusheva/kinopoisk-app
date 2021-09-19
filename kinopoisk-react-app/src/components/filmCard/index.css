@@ -15,8 +15,8 @@
 
 .film-picture {
     padding-right: 60px;
-    width: 320px;
-    height: 440px;
+    width: auto;
+    height: 470px;
 }
 
 .film-title {
@@ -83,7 +83,7 @@
     border-radius: 5px;
     padding: 4px 6px;
     position: absolute;
-    top: 13px;
+    bottom: 9px;
     margin-left: 10px;
 }
 
@@ -107,6 +107,7 @@
 
 .recommend-movie-body {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .recommend-movie-title {
@@ -117,15 +118,19 @@
     color: #bbc2ce;
 }
 
+@media (max-width: 1024px) {
+    .film-card {
+        width: 82%;
+    }
+}
+
 @media (max-width: 768px) {
     .film-card {
-        width: 85%;
-        margin-top: 3%;
+        margin-top: 9%;
     }
 
     .film-picture {
         padding-right: 40px;
-        width: 250px;
         height: 370px;
     }
 
@@ -143,11 +148,16 @@
 
     .film-title {
         position: absolute;
-        left: 7%;
-        top: 10%;
+        left: 9%;
+        top: 15%;
+        font-size: 32px;
     }
 
     .film-save {
-        left: 7.5%;
+        left: 7%;
+    }
+
+    .col-rating {
+        display: none;
     }
 }
