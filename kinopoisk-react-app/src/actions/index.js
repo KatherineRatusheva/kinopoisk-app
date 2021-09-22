@@ -29,6 +29,10 @@ export const signIn = (email, password) => {
     
         } catch (err) {
             console.log('response error', err);
+            dispatch ({
+                type: ACTION_TYPES.ERROR_REGISTER,
+                payload: err.response.data
+            })
         }
     }
 }

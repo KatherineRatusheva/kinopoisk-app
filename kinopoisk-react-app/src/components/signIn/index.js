@@ -86,7 +86,7 @@ const SignIn = () => {
             {valueNavRegistration === 'Войти' &&
             <div className='signin-container'>
             <h1 className='signin-title'>Войти в профиль</h1>
-            {error ? <div className='signin-error'> {error} </div> : ''}
+            {error ? <div className='signin-error'> {error} </div> : <div className='signin-error'> </div>}
 
             <div className='login-container'>
                 <div className='login-title'>Введите e-mail:</div>
