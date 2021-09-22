@@ -15,7 +15,7 @@
 
 .film-picture {
     padding-right: 60px;
-    width: auto;
+    width: 320px;
     height: 470px;
 }
 
@@ -52,7 +52,7 @@
 
 .film-save {
     position: relative;
-    left: 65px;
+    left: 80px;
     margin-top: 20px;
     width: 150px;
     height: 42px;

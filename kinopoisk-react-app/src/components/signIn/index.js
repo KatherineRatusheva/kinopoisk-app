@@ -12,6 +12,7 @@ const SignIn = () => {
     const password = useSelector((state) => { return state.password })
     const login = useSelector((state) => { return state.login })
     const user = useSelector((state) => { return state.user })
+    const error = useSelector((state) => { return state.error })
 
     const getUserEmail = (event) => {
         dispatch ({
@@ -71,7 +72,7 @@ const SignIn = () => {
 
         :
         
-        <div>
+        <div className='signin-body'>
             <div className='signin-tags'>
                 <div className={valueNavRegistration === 'Регистрация' ? 'signin-navbar-select' : 'signin-navbar'} 
                 onClick={getValueNavRegistration} 
@@ -85,6 +86,7 @@ const SignIn = () => {
             {valueNavRegistration === 'Войти' &&
             <div className='signin-container'>
             <h1 className='signin-title'>Войти в профиль</h1>
+            {error ? <div className='signin-error'> {error} </div> : ''}
 
             <div className='login-container'>
                 <div className='login-title'>Введите e-mail:</div>
@@ -113,6 +115,7 @@ const SignIn = () => {
             {valueNavRegistration === 'Регистрация' &&
             <div className='signin-container'>
             <h1 className='signin-title'>Регистрация</h1>
+            {error ? <div className='signin-error'> {error} </div> : <div className='signin-error'> </div>}
 
             <div className='login-container'>
                 <div className='login-title'>Введите логин:</div>

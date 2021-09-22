@@ -11,6 +11,7 @@ const initialState = {
     login: '',
     user: null,
     accessToken: '',
+    error: '',
 
     inputSearch: '',
     searchFilms: [],
@@ -90,6 +91,14 @@ const reducer = (state = initialState, action) => {
         }
     }
 
+    if(action.type === ACTION_TYPES.ERROR_REGISTER) {
+        return {
+            ...state,
+            error: action.payload,
+        }
+    }
+
+    // Поиск
     if(action.type === ACTION_TYPES.SEARCH_INPUT) {
         return {
             ...state,
