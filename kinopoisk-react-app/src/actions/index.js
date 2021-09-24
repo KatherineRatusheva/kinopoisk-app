@@ -47,6 +47,7 @@ export const registerUser = (login, email, password) => {
                 "login": login, 
                 "email": email, 
                 "password": password,
+                "saveFilms": []
             })
     
             dispatch ({
@@ -165,20 +166,6 @@ export const getMoviesSearch = (inputSearchValue) => {
 // Добавить фильм в избранное
 export const addSaveMovieApi = (saveFilmsUser, cardFilm) => {
     return async (dispatch) => {
-        if (!saveFilmsUser) {
-            try {
-                const responce = await axios.patch(`http://localhost:3000/users/${sessionStorage.userId}`, 
-                {
-                    "saveFilms": [cardFilm]
-                })
-                dispatch ({
-                    type: ACTION_TYPES.SAVE_FILM_USER,
-                    payload: responce.data.saveFilms
-                }) 
-            } catch (err) {
-                console.log('response error', err);
-            }
-        } else 
         try {
             const responce = await axios.patch(`http://localhost:3000/users/${sessionStorage.userId}`, 
             {

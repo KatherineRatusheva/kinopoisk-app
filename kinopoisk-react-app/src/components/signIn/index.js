@@ -66,7 +66,7 @@ const SignIn = () => {
         {user ? 
 
         <div>
-            <div className='signin-title'> Привет <b>{user.email}</b> 👋</div>
+            <div className='signin-login'> Привет <b>{user.login}</b> 👋</div>
             <button className='signin-button' onClick={logout}>Выйти</button>
         </div>
 

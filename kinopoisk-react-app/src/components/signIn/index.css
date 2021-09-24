@@ -100,3 +100,9 @@
     color: #d43053;
     font-size: 14px;
 }
+
+.signin-login {
+    margin: 30px;
+    font-size: 28px;
+    color: white;
+}
