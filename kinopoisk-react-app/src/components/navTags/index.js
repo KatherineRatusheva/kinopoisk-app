@@ -98,7 +98,9 @@ const NavbarTags = () => {
 
         <Slider className='tags-menu' {...settings}>
             {category.map((item) => 
-            <div><Link to={`/${item}`} key={item} onClick={() => getSelectCategory(item)}><div className='tag-name'> {item} </div></Link></div>)}
+            <div key={item}>
+              <Link to={`/${item}`} onClick={() => getSelectCategory(item)}><div className='tag-name'> {item} </div></Link>
+            </div>)}
         </Slider>
 
     )

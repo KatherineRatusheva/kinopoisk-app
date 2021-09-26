@@ -5,7 +5,7 @@ import './index.css';
 import Swal from 'sweetalert2';
 import ReactPlayer from 'react-player/youtube';
 import { getMoviesCard, addSaveMovieApi, getMovies } from '../../actions';
-import { Rating } from 'react-simple-star-rating';
+import { RatingView } from 'react-simple-star-rating';
 
 
 const FilmCard = () => {
@@ -93,7 +93,7 @@ const FilmCard = () => {
                     <div className='col'>
                         <div className='col-name'> Рейтинг: <span className='rating'>{cardFilm.rating}</span> </div>
                         <div className='col-rating'>
-                        <Rating ratingValue={cardFilm.rating} stars={10} />
+                        <RatingView ratingValue={Math.round(cardFilm.rating)} stars={10} />
                         </div>
                     </div>
                     
