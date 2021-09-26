@@ -29,9 +29,15 @@ const Search = () => {
                 value={inputSearch} 
                 onChange={getValueSearch}/>
 
+                {inputSearch==='' ? 
+                <Link to={`/`}>
+                    <button className='button-search'></button>
+                </Link>
+                :
                 <Link to={`/search=${inputSearch}`}>
                     <button className='button-search' onClick={() => getMovies(inputSearch)}></button>
                 </Link>
+                }
             </form>   
         </div>
     )
