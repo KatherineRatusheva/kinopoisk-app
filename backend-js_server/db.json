@@ -2,15 +2,10 @@
   "users": [
     {
       "email": "k.ratusheva@gmail.com",
-      "password": "$2a$10$j8OeHv/LZFq7jC0vn5KcBerB3RZa5/HXdlCgs.Vh4.v3sF4snO6CW",
-      "login": "k.ratusheva",
+      "password": "$2a$10$oqO0GUJOjaVK1AeUT1qDIO8j9AOyk0tH0jsndkHysWd7nMW8Rw09q",
+      "login": "ratusheva",
+      "saveFilms": [],
       "id": 1
-    },
-    {
-      "email": "test@mail.ru",
-      "password": "$2a$10$ukCvKt3vtQWfuMsc2WoPcO.rYKNrL3mlY5LNzqZ02ipLeHn.BWi7m",
-      "login": "test",
-      "id": 2
     }
   ],
   "films": [
@@ -79,7 +74,7 @@
         "Майкл Рукер"
       ],
       "img": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/mJkH0C3AAX6Au7cIEv1YMSH09UT.jpg",
-      "video": "https://youtu.be/J53GH3Oc7uw"
+      "video": "https://youtu.be/mQiwF7MzUrc"
     },
     {
       "id": "tihoe-mesto-2",
