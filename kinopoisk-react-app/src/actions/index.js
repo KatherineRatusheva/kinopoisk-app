@@ -151,7 +151,7 @@ export const getMoviesNavbar = (selectCategoryMenu) => {
 export const getMoviesSearch = (inputSearchValue) => {
     return async (dispatch) => {
         try {
-            const responce = await axios.get(`http://localhost:3000/films?q=${inputSearchValue}`)
+            const responce = await axios.get(`http://localhost:3000/films?name_like=${inputSearchValue}`)
             dispatch ({
                 type: ACTION_TYPES.GET_SEARCH_FILMS,
                 payload: responce.data
