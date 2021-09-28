@@ -33,11 +33,11 @@ export default function App() {
         <Switch>
 
           <Route path="/popular">
-            <NavCategory />
+            <NavCategory type='Популярные'/>
           </Route>
 
           <Route path="/new">
-            <NavCategory />
+            <NavCategory type='Новинки'/>
           </Route>
 
           <Route path="/save">

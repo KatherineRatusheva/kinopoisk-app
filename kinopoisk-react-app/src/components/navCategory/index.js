@@ -3,22 +3,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { getMoviesNavbar } from '../../actions';
 
-const NavCategory = () => {
+const NavCategory = ({type}) => {
 
     const dispatch = useDispatch()
 
     const films = useSelector((state) => { return state.films })
-    const selectNavigationType = useSelector((state) => { return state.selectNavigationType })
 
     useEffect(() => {
-        dispatch(getMoviesNavbar(selectNavigationType))
-    }, [selectNavigationType])
+        dispatch(getMoviesNavbar(type))
+    }, [type])
 
     return (
         <div className='app-category'>
-            <h1 className='category-title'> {selectNavigationType} </h1>
+            <h1 className='category-title'> {type} </h1>
             <div className='category-body'>
-            {films.filter(item => item.type === `${selectNavigationType}`).map(item => (
+            {films.filter(item => item.type === `${type}`).map(item => (
                 <div key={item.id} className='films-card'>
                     <div className='film-rating'> {item.rating} </div>
                     <Link to={`/film/${item.id}`}>

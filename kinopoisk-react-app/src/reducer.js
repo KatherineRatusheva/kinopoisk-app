@@ -4,7 +4,6 @@ const initialState = {
     films: [],
     cardFilm: {},
     selectCategory: '',
-    selectNavigationType: '',
 
     email: '',
     password: '',
@@ -45,13 +44,6 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             selectCategory: action.payload,
-        }
-    }
-
-    if(action.type === ACTION_TYPES.SELECT_NAVIGATION_TYPE_FILMS) {
-        return {
-            ...state,
-            selectNavigationType: action.payload,
         }
     }
 

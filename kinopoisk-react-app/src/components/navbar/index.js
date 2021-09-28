@@ -1,32 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { ACTION_TYPES } from '../../constants';
+import { useSelector } from 'react-redux';
 import './index.css'
 
 import Search from '../../components/search';
 
 const Navbar = () => {
 
-    const dispatch = useDispatch()
-
-    const selectNavigationType = useSelector((state) => { return state.selectNavigationType })
     const user = useSelector((state) => { return state.user })
-
-    const getTypeFilm = (item) => {
-        dispatch ({
-            type: ACTION_TYPES.SELECT_NAVIGATION_TYPE_FILMS,
-            payload: item
-        })
-    }
   
     return (
         <>
         <nav className='navbar'>
             <div className='navbar-menu'>
             <Link to={'/'} className='navbar-main'>Главная</Link>
-            <Link to={'/new'} className='navbar-new' onClick={()=> getTypeFilm("Новинки")}>Новинки</Link>
-            <Link to={'/popular'} className='navbar-popular' onClick={()=> getTypeFilm("Популярные")}>Популярные</Link>
+            <Link to={'/new'} className='navbar-new'>Новинки</Link>
+            <Link to={'/popular'} className='navbar-popular'>Популярные</Link>
             <Search />
             </div>
             <div className='navbar-user'>
